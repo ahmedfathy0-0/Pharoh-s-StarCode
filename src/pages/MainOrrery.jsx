@@ -14,6 +14,7 @@ import CameraController from '../components/CameraController';
 import PlanetInfo from '../components/PlanetInfo';
 import MoonInfo from '../components/MoonInfo';
 import moonData from '../components/MoonData';
+import Sidebar from '../components/Sidebar';
 import './Ebook.css'; 
 // import PlanetsAPI from '../components/RetriveData';
 
@@ -46,6 +47,11 @@ const MainOrrery = () => {
   const [isclicked, setIsClicked] = useState(false);
   const [cameraPosition, setCameraPosition] = useState(new THREE.Vector3(0, 200, 250)); 
   const [loading, setLoading] = useState(true);
+  const [isOpen, setIsOpen] = useState(false); 
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);  
+  };
 
   useEffect(() => {
     const loadOrrery = setTimeout(() => {
@@ -123,6 +129,9 @@ const MainOrrery = () => {
             /> 
         </Suspense>
       </Canvas>
+      <div className="app-layout">
+      <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
+      </div>
 
       {planetInfo && (
         <PlanetInfo planetInfo={planetInfo} handleClose={handleClose} />

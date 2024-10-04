@@ -11,11 +11,7 @@ import TeamPage from './pages/TeamPage';
 import ExplorePage from './pages/ExplorePage';
 
 const App = () => {
-  const [isOpen, setIsOpen] = useState(false);  // State to manage sidebar visibility
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);  // Toggle the sidebar open/closed state
-  };
+  
   const router=createBrowserRouter(
     createRoutesFromElements(
         <Route element={<Layout/>}>
@@ -28,15 +24,11 @@ const App = () => {
   )
   function Layout(){
     return(
-      <div className="app-layout">
-      {/* Sidebar component with open/close state */}
-      <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
-
-      {/* Main content */}
-      <div className={`content ${isOpen ? 'shifted' : ''}`}>
+      <>
         <Outlet />
-      </div>
-    </div>
+      </>
+       
+
     )
   }
   return ( 
