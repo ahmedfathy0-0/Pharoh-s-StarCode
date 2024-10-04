@@ -14,8 +14,32 @@ import titanImage from '../images/Titan.png';
 import uranusImage from '../images/Uranus.png';
 import neptuneImage from '../images/Neptune.png';
 
+const Asteroids = {
+  0 : "Eros",
+  1 : "Albert",
+  2 : "Alinda",
+  3 : "Ganymed",
+  4 : "Amor",
+  5 : "Icarus",
+  6 : "Betulia",
+  7 : "Geographos",
+  8 : "Ivar",
+  9 : "Toro",
+  10 : "Apollo",
+  11 : "Antinous",
+  12 : "Daedalus",
+  13 : "Cerberus",
+  14 : "Sisyphus",
+  15 : "Quetzalcoatl",
+  16 : "Boreas",
+  17 : "Cuyo",
+  18 : "Anteros",
+  19 : "Tezcatlipoca",
+}
+
 const Sidebar = ({ isOpen, toggleSidebar, onPlanetClick }) => {
-  const [expandedMoons, setExpandedMoons] = useState([false, false, false, false, false, false, false, false]);
+  const [expandedMoons, setExpandedMoons] = useState([false,false,false, false, false, false, false, false, false, false]);
+  const [style, setStyle] = useState({  });
   const toggleMoons = (id) => {
     setExpandedMoons(() => ({
       [0]: false,
@@ -25,24 +49,29 @@ const Sidebar = ({ isOpen, toggleSidebar, onPlanetClick }) => {
       [4]: false,
       [5]: false,
       [6]: false,
+      [7]: false,
+      [8]: false,
+      [9]: false,
       [id]: true,
     }));
-
+    setStyle({ overflow: 'auto' });
   };
+  
 
   return (
-    <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+    <div style = {style} 
+      className={`sidebar ${isOpen ? 'open' : ''}`}>
       <h2>NAVIGATION</h2>
       <ul className="planets">
-        <li className='Mercury' onClick={() => {onPlanetClick(1); toggleSidebar();}}>
+        <li className='Mercury' onClick={() => {onPlanetClick(1); toggleSidebar(); setStyle({  });}}>
           <a href="#"> <img src={mercuryImage} alt="Mercury" />
            Mercury</a>
         </li>
-        <li className='Venus' onClick={() => {onPlanetClick(2); toggleSidebar();}}>
+        <li className='Venus' onClick={() => {onPlanetClick(2); toggleSidebar(); setStyle({});}}>
           <a href="#"> <img src={venusImage} alt="Venus" />
             Venus</a>
         </li>
-        <li className='Earth' onClick={() => {onPlanetClick(3); toggleSidebar();}}>
+        <li className='Earth' onClick={() => {onPlanetClick(3); toggleSidebar(); setStyle({ });}}>
           
           <a href="#"><img src={earthImage} alt="Earth" />
             Earth 
@@ -51,7 +80,7 @@ const Sidebar = ({ isOpen, toggleSidebar, onPlanetClick }) => {
             )}
           </a>
           <ul className={expandedMoons[3] ? 'show' : ''}>
-            <li className='Moon' onClick={(e) => { e.stopPropagation(); onPlanetClick(13);  toggleSidebar();}}>
+            <li className='Moon' onClick={(e) => {setStyle({ overflow: 'none' }); e.stopPropagation(); onPlanetClick(13);  toggleSidebar(); }}>
               
               <a href="#"><img src={moonImage} alt="Moon" />
                 Moon</a>
@@ -67,14 +96,14 @@ const Sidebar = ({ isOpen, toggleSidebar, onPlanetClick }) => {
             )}
           </a>
           <ul className={expandedMoons[4] ? 'show' : ''}>
-            <li className='Phobos' onClick={(e) => { e.stopPropagation(); onPlanetClick(14); toggleSidebar(); }}>
+            <li className='Phobos' onClick={(e) => { e.stopPropagation(); onPlanetClick(14); toggleSidebar(); setStyle({ }); }}>
               
               <a href='#'><img src={phobosImage} alt="Phobos" />
                 Phobos</a>
             </li>
           </ul>
         </li>
-        <li className='Jupiter' onClick={() => {onPlanetClick(5); toggleSidebar();}}>
+        <li className='Jupiter' onClick={() => {onPlanetClick(5); toggleSidebar(); setStyle({ });}}>
           
           <a href="#"><img src={jupiterImage} alt="Jupiter" />
             Jupiter 
@@ -83,14 +112,14 @@ const Sidebar = ({ isOpen, toggleSidebar, onPlanetClick }) => {
             )}
           </a>
           <ul className={expandedMoons[5] ? 'show' : ''}>
-            <li className='Europa' onClick={(e) => { e.stopPropagation(); onPlanetClick(15); toggleSidebar();}}>
+            <li className='Europa' onClick={(e) => { e.stopPropagation(); onPlanetClick(15); toggleSidebar(); setStyle({});}}>
               
               <a href='#'><img src={europaImage} alt="Europa" />
                 Europa</a>
             </li>
           </ul>
         </li>
-        <li className='Saturn' onClick={() => {onPlanetClick(6); toggleSidebar();}}>
+        <li className='Saturn' onClick={() => {onPlanetClick(6); toggleSidebar(); setStyle({ });}}>
           
           <a href="#"><img src={saturnImage} alt="Saturn" />
             Saturn  
@@ -99,7 +128,7 @@ const Sidebar = ({ isOpen, toggleSidebar, onPlanetClick }) => {
             )}
           </a>
           <ul className={expandedMoons[6] ? 'show' : ''}>
-            <li className='Titan' onClick={(e) => { e.stopPropagation(); onPlanetClick(16); toggleSidebar();}}>
+            <li className='Titan' onClick={(e) => { e.stopPropagation(); onPlanetClick(16); toggleSidebar(); setStyle({  });}}>
               
               <a href='#'><img src={titanImage} alt="Titan" />
                 Titan</a>
@@ -111,14 +140,28 @@ const Sidebar = ({ isOpen, toggleSidebar, onPlanetClick }) => {
           <a href="#"><img src={uranusImage} alt="Uranus" />
             Uranus</a>
         </li>
-        <li className='Neptune' onClick={() => {onPlanetClick(8); toggleSidebar();}}>
+        <li className='Neptune' onClick={() => {onPlanetClick(8); toggleSidebar(); setStyle({  });}}>
           
           <a href="#"><img src={neptuneImage} alt="Neptune" />
             Neptune</a>
         </li>
+        <li className='NEO' onClick={() => {onPlanetClick(9); toggleSidebar(); setStyle({ });}}>
+          <a href="#">NEOs</a>
+          {!expandedMoons[9] && (
+            <FiArrowRight className="moon-icon" onClick={(e) => { e.stopPropagation(); toggleMoons(9); }} />
+          )}
+          <ul className={expandedMoons[9] ? 'show' : ''}>
+            {Object.entries(Asteroids).map(([index, asteroid]) => (
+              <li key={index} className={asteroid} onClick={(e) => { e.stopPropagation(); onPlanetClick(500+parseInt(index)); toggleSidebar(); setStyle({}); }}>
+                <a href="#">{asteroid}</a>
+              </li>
+            ))}
+          </ul>
+        </li>
+
       </ul>
 
-      <div className="sidebar-button" onClick={() => { toggleSidebar(); setExpandedMoons([false, false, false, false, false, false, false, false]); }}>
+      <div className="sidebar-button" onClick={() => { toggleSidebar(); setExpandedMoons([false, false, false, false, false, false, false, false]);   }}>
         {isOpen ? 'Close' : 'Open'} Menu
       </div>
     </div>

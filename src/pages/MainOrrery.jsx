@@ -72,6 +72,7 @@ const MainOrrery = () => {
     setSelectedPlanet(planetId);
     setIsClicked(true);
     console.log (selectedPlanet);
+    console.log(planetPosition);
   };
 
   const handleClose = () => {
@@ -114,7 +115,11 @@ const MainOrrery = () => {
             rotFactor={speedFactor/10}
           />
           ))}
-          <NEOScene />
+          <NEOScene
+           onClick={handlePlanetClick}
+           setPlanetPosition={setPlanetPosition}
+           selectedPlanet={selectedPlanet}
+          />
           <Lights />
           <OrbitControls 
             enableZoom={true}

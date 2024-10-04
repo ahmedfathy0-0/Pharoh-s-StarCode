@@ -193,7 +193,6 @@ const Planet = ({ id, onClick,setPlanetPosition, selectedPlanet,spFactor, rotFac
     setCurrentPosition( worldPosition);
    // console.log(selectedPlanet);
   
-
     if (id === selectedPlanet || id === selectedPlanet - 10) {
       if(id === selectedPlanet - 10){
         setMoonsideClicked(true);

@@ -72,6 +72,108 @@ const CameraController = ({ planetPosition , isclicked, currentCameraPosition, s
       targety = planetPosition.y ;
       targetz = planetPosition.z;
       break;
+    //astroids
+    case 500:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+    case 501:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+    case 502:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+    case 503:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+    case 504:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+    case 505:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+    case 506:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+    case 507:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+    case 508:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+    case 509:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+    case 510:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+    case 511:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+    case 512:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+    case 513:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+    case 514:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+    case 515:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+    case 516:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+    case 517:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+    case 518:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+    case 519:
+      targetx = planetPosition.x + 1;
+      targety = planetPosition.y ;
+      targetz = planetPosition.z;
+      break;
+
 
     default:
       targetx = 0;
