@@ -2,10 +2,11 @@ import React, { useRef, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useTexture } from '@react-three/drei';
+import { Text } from '@react-three/drei';
 import HazardousBodyTexture from "../textures/asteroid_texture.jpg";
 
 
-const HazardousBody = ({ size, distanceFromSun, speed, rotationspeed, initialAngle }) => {
+const HazardousBody = ({ size, distanceFromSun, speed, rotationspeed, initialAngle,name,Labels }) => {
     const meshRef = useRef();
     const angleRef = useRef(initialAngle);
     const texture = useTexture(HazardousBodyTexture);
@@ -30,6 +31,13 @@ const HazardousBody = ({ size, distanceFromSun, speed, rotationspeed, initialAng
 
     return (
         <mesh ref={meshRef} geometry={geometry} material={material} >
+            {Labels&&(        <Text
+        position={[0, 3, 0]}   // Position of the text
+        fontSize={1}          // Size of the text
+        color="red"           // Color of the text
+      >
+        {name}
+      </Text>)}
             <meshStandardMaterial map={texture} />
         </mesh>
     );
