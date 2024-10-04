@@ -1,101 +1,116 @@
+/* Sidebar Container */
 .sidebar {
-    width: 250px;
-    height: 100vh;
-    background-color: #363b4a; 
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    left: -250px; 
-    transition:  0.3s;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-  
+  width: 250px;
+  height: 100vh;
+  background-color: #363b4a; /* Dark background */
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hidden initially */
+  transition: left 0.4s ease-in-out; /* Smooth transition */
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  z-index: 1000;
+  border-radius: 0 20px 20px 0; /* Smooth rounded corners */
+}
 
-  .sidebar.open {
-    left: 0;
-  }
-  
+/* Sidebar Open State */
+.sidebar.open {
+  left: 0;
+}
 
-  .sidebar h2 {
-    margin: 0 0 15px;
-    font-size: 24px;
-    color: #191d21; 
-  }
-  
-  .sidebar ul a{
-    color: #007bff;
-  }
-  .planets {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    
-  }
-  
-  .planets li {
-    padding: 10px;
-    border-radius: 4px;
-    transition:  0.3s;
-  }
-  
-  .planets li:hover {
-    background-color: #e0e0e0; 
-  }
-  
+/* Sidebar Header */
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #191d21; /* Dark grey title */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-bottom: 2px solid #007bff; /* Stylish underline */
+  padding-bottom: 10px;
+}
 
-  .planets ul {
-    list-style: none;
-    padding-left: 20px; 
-    display: block;
-    color: #191d21;
-  }
-  .planets ul li::before{
-    content: "\2022";
-    display: inline-block;
-    width: 1em;
-    font-weight: bold;
-  }
-  
+/* Sidebar Planet List */
+.planets {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
-  
-  
-  .moon-icon {
-    cursor: pointer;
-    display: inline-block;
-    width: 16px;  
-    height: 16px; 
-    border-radius: 50%;
-    margin-left: 40px;
-    position: relative;
-  }
-  
-  .moon-icon::after {
-    content: "→"; 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    right: -50px;
-    transform: translate(-50%, -50%);
-    font-size: 30px; 
-  }
-  
-  .sidebar-button {
-    position: absolute;
-    width:50px;
-    top: 50%;
-    right: -50px;
-    transform: translateY(-50%);
-    background-color: #363b4a;
-    padding: 0px;
-    cursor: pointer;
-    z-index: 1000; 
-    border-radius: 0 5px 5px 0; 
-    transition:  .3s;
-    color: black;
-  }
-  
-  .sidebar-button:hover {
-    background-color: white;
-  }
-  
+/* Planet List Item */
+.planets li {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center; /* Center icons and text */
+}
+
+/* Hover Effect */
+.planets li:hover {
+  background-color: #e0e0e0; /* Light hover color */
+  color: #191d21;
+}
+
+/* Planet Links */
+.planets li a {
+  color: #007bff; /* Blue links */
+  text-decoration: none;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+/* Moon List */
+.planets ul {
+  list-style-type: none;
+  padding-left: 20px;
+  display: none; /* Hidden initially */
+}
+
+/* Show Moons when Planet is Clicked */
+.planets li.show ul {
+  display: block; /* Reveal moons */
+}
+
+/* Moon Icon (beside planets with moons) */
+.moon-icon {
+  cursor: pointer;
+  display: inline-block;
+  margin-left: auto;
+  font-size: 18px;
+  color: #007bff;
+}
+
+/* Circular Moon Indicator */
+.moon-icon::before {
+  content: "🌓"; /* Moon symbol */
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-button {
+  position: absolute;
+  width: 50px;
+  top: 50%;
+  right: -50px;
+  transform: translateY(-50%);
+  background-color: #363b4a;
+  color: #fff;
+  padding: 15px 5px;
+  border-radius: 0 5px 5px 0;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Hover Effect for Toggle Button */
+.sidebar-button:hover {
+  background-color: #007bff; /* Blue when hovered */
+}
+
+/* Active State for Toggle Button */
+.sidebar.open + .sidebar-button {
+  right: 250px; /* Move with sidebar */
+}
