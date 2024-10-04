@@ -11,7 +11,12 @@ import TeamPage from './pages/TeamPage';
 import ExplorePage from './pages/ExplorePage';
 
 const App = () => {
-  
+  const [isOpen, setIsOpen] = useState(false);  // State to manage sidebar visibility
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);  // Toggle the sidebar open/closed state
+  };
+  const MemoizedMainOrrery = React.memo(MainOrrery);
   const router=createBrowserRouter(
     createRoutesFromElements(
         <Route element={<Layout/>}>

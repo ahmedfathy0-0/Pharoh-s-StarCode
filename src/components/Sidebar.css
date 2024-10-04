@@ -1,12 +1,12 @@
 .sidebar {
     width: 250px;
     height: 100vh;
-    background-color: #f4f4f4; 
+    background-color: #363b4a; 
     padding: 20px;
     position: fixed;
     top: 0;
     left: -250px; 
-    transition:  0.3s ase;
+    transition:  0.3s;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
   }
@@ -20,14 +20,17 @@
   .sidebar h2 {
     margin: 0 0 15px;
     font-size: 24px;
-    color: #333; 
+    color: #191d21; 
   }
   
-  
+  .sidebar ul a{
+    color: #007bff;
+  }
   .planets {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    
   }
   
   .planets li {
@@ -42,14 +45,19 @@
   
 
   .planets ul {
-    list-style-type: none;
+    list-style: none;
     padding-left: 20px; 
-    display: none;
+    display: block;
+    color: #191d21;
+  }
+  .planets ul li::before{
+    content: "\2022";
+    display: inline-block;
+    width: 1em;
+    font-weight: bold;
   }
   
-  .planets li.show > ul {
-    display: block; 
-  }
+
   
   
   .moon-icon {
@@ -78,8 +86,7 @@
     top: 50%;
     right: -50px;
     transform: translateY(-50%);
-    background-color: #f0f0f0f0;
-    color: white;
+    background-color: #363b4a;
     padding: 0px;
     cursor: pointer;
     z-index: 1000; 
@@ -89,6 +96,6 @@
   }
   
   .sidebar-button:hover {
-    background-color: #666;
+    background-color: white;
   }
   
