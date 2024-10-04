@@ -8,7 +8,7 @@ const planetData = [
       numberOfMoon: "0",
       RelationshipToEarth:
         "Mercury has no moons and lacks the geological activity seen on Earth, making its surface appear ancient.",
-      videoUrl: "https://www.youtube.com/embed/0KBjnNuhRHs?si=q80GlJTg2HRrCg6A", 
+      videoUrl: "https://www.youtube.com/embed/0KBjnNuhRHs?si=q80GlJTg2HRrCg6A", // Replace with actual video URL
       mcqs: [
         {
           question: "What is Mercury known for?",
@@ -41,7 +41,7 @@ const planetData = [
       numberOfMoon: "0",
       RelationshipToEarth:
         "Venus is Earth’s 'sister planet' because they are similar in size. However, Venus has no moons and a very thick atmosphere that makes it extremely hot.",
-      videoUrl: "https://www.youtube.com/embed/z8HB8jlWai8?si=HYJR_UKLrLU_n_12", 
+      videoUrl: "https://www.youtube.com/embed/z8HB8jlWai8?si=HYJR_UKLrLU_n_12", // Replace with actual video URL
       mcqs: [
         {
           question: "What is Venus known for?",
@@ -73,7 +73,7 @@ const planetData = [
         "365.25 Earth days , allowing for the beautiful cycle of seasons.",
       distanceFromSun: "1.00 AU",
       numberOfMoon: "1",
-      videoUrl: "https://www.youtube.com/embed/8DQeFmWUyd8?si=ZvbjW7IgiM5-iysA", 
+      videoUrl: "https://www.youtube.com/embed/8DQeFmWUyd8?si=ZvbjW7IgiM5-iysA", // Replace with actual video URL
       mcqs: [
         {
           question: "What makes Earth unique?",
@@ -101,7 +101,7 @@ const planetData = [
       numberOfMoon: "2",
       RelationshipToEarth:
         "Mars has similar day lengths to Earth but is colder and less hospitable. It shows signs of ancient water, making it a key target for future exploration.",
-      videoUrl: "https://www.youtube.com/embed/dAZKu_ojb14?si=kBFHBToIBTmP8mML", 
+      videoUrl: "https://www.youtube.com/embed/dAZKu_ojb14?si=kBFHBToIBTmP8mML", // Replace with actual video URL
       mcqs: [
         {
           question: "How many moons does Mars have?",
@@ -129,7 +129,7 @@ const planetData = [
       numberOfMoon: "79",
       RelationshipToEarth:
         "Jupiter's Great Red Spot is a permanent storm, unlike Earth's ever-changing weather. This centuries-old storm highlights the fascinating differences in their atmospheres.",
-      videoUrl: "https://www.youtube.com/embed/499R500kHOs?si=kxMVrBwyYnZsnoLt",
+      videoUrl: "https://www.youtube.com/embed/499R500kHOs?si=kxMVrBwyYnZsnoLt", // Replace with actual video URL
       mcqs: [
         {
           question: "What is the largest planet in our solar system?",
@@ -152,7 +152,7 @@ const planetData = [
       numberOfMoon: "83",
       RelationshipToEarth:
         "Unlike Earth, a rocky planet, Saturn is a gas giant with no solid surface.",
-      videoUrl: "https://www.youtube.com/embed/epZdZaEQhS0?si=h1Cqpk-xtjlQeYAE",
+      videoUrl: "https://www.youtube.com/embed/epZdZaEQhS0?si=h1Cqpk-xtjlQeYAE", // Replace with actual video URL
       mcqs: [
         {
           question: "What is Saturn famous for?",
@@ -180,7 +180,7 @@ const planetData = [
       numberOfMoon: "27",
       RelationshipToEarth:
         "Uranus is an ice giant with no solid surface and a frigid atmosphere, making it uninhabitable. Unlike Earth,it remains largely unexplored.",
-      videoUrl: "https://www.youtube.com/embed/6dcfxVydbQY?si=VOXiTmuReJSZgW-r", 
+      videoUrl: "https://www.youtube.com/embed/6dcfxVydbQY?si=VOXiTmuReJSZgW-r", // Replace with actual video URL
       mcqs: [
         {
           question: "How does Uranus rotate?",
@@ -208,7 +208,7 @@ const planetData = [
       numberOfMoon: "14",
       RelationshipToEarth:
         "Neptune stands in stark contrast to Earth, with its frigid temperatures and lack of a solid surface, rendering it uninhabitable. ",
-      videoUrl: "https://www.youtube.com/embed/NStn7zZKXfE?si=1rFmlmM4xNlc6SmG",
+      videoUrl: "https://www.youtube.com/embed/NStn7zZKXfE?si=1rFmlmM4xNlc6SmG", // Replace with actual video URL
       mcqs: [
         {
           question: "What is Neptune known for?",
@@ -230,5 +230,4 @@ const planetData = [
   ];
   
   export default planetData;
-
   
