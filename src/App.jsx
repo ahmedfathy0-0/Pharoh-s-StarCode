@@ -13,6 +13,7 @@ const App = () => {
   const toggleSidebar = () => {
     setIsOpen(!isOpen);  // Toggle the sidebar open/closed state
   };
+  const MemoizedMainOrrery = React.memo(MainOrrery);
   const router=createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<Layout/>}>
