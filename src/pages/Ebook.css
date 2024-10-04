@@ -1,0 +1,75 @@
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	font-family: system-ui, sans-serif;
+	font-size: calc(1rem + 1vw);
+	line-height: 1;
+}
+img {
+	max-width: 100%;
+	object-fit: cover;
+}
+
+.ebook-container {
+    margin-top: 50px;
+    padding: 20px;
+    color: aliceblue;
+  }
+  
+  .loading-screen {
+    margin-top: 50px;
+  }
+  
+  .orrery-container {
+    margin-top: 50px;
+    text-align: center;
+  }
+  .loading-container-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh; /* Full viewport height */
+	width: 100vw; /* Full viewport width */
+  }
+  
+  .loading-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 8em;
+	height: 1em; /* Set a fixed height to match width */
+	outline: 1px solid #c31dd2;
+	outline-offset: 3px;
+	border-radius: 1em;
+	box-shadow: 0 0 1.5em -0.15em #b821f3;
+  }
+  
+  .dot {
+	width: 1em;
+	height: 1em;
+	background: #d028ff;
+	border-radius: 20em;
+	filter: brightness(1.25);
+	animation: stretch 2s linear alternate infinite;
+  }
+  
+  @keyframes stretch {
+	0% {
+		transform-origin: center;
+		transform: translateX(-3.5em); /* Start at -4em */
+	  }
+	  100% {
+		transform: translateX(3.5em); /* End at 4em */
+	  }
+	  50% {
+		width: 3em; /* Widen in the middle */
+	  }
+  }
+

@@ -14,6 +14,7 @@ import CameraController from '../components/CameraController';
 import PlanetInfo from '../components/PlanetInfo';
 import MoonInfo from '../components/MoonInfo';
 import moonData from '../components/MoonData';
+import './Ebook.css'; 
 // import PlanetsAPI from '../components/RetriveData';
 
 const generateAsteroidBelt = (count, marsOrbit, jupiterOrbit) => {
@@ -44,6 +45,16 @@ const MainOrrery = () => {
   const [planetPosition, setPlanetPosition] = useState(null); 
   const [isclicked, setIsClicked] = useState(false);
   const [cameraPosition, setCameraPosition] = useState(new THREE.Vector3(0, 200, 250)); 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadOrrery = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(loadOrrery);
+  }, []);
+
     const { speedFactor, dateString } = useControls({
       speedFactor: { value: 1, min: -100000, max: 100000, step: 5 },
       dateString: {
@@ -68,6 +79,17 @@ const MainOrrery = () => {
   const planetInfo = planetData.find((p) => p.id === selectedPlanet);
   const moonInfo = moonData.find((m) => m.id === selectedPlanet); 
  
+  if (loading) {
+    return (
+      <div className="loading-container-wrapper">
+      <div className="loading-container">
+        <div className="dot"></div>
+      </div>
+    </div>
+
+    );
+  }
+
 
   return (
     <>
