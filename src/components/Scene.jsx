@@ -37,7 +37,7 @@ const Scene = () => {
                 const position = [asteroid.x / 1e10, asteroid.y / 1e10, asteroid.z / 1e10]; // Scale down positions
 
                 // Log the position and angle
-                console.log(`Rendering Asteroid: ${index} at Position: (${position[0]}, ${position[1]}, ${position[2]}) | Angle: ${asteroid.initialAngle}`);
+               // console.log(`Rendering Asteroid: ${index} at Position: (${position[0]}, ${position[1]}, ${position[2]}) | Angle: ${asteroid.initialAngle}`);
 
                 return (
                     <Asteroid

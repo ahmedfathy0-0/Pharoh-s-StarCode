@@ -14,7 +14,7 @@ const NEOScene = () => {
                 const response = await axios.get(NEO_API_URL);
                 const hazardousNEOs = response.data.near_earth_objects;
                 setHazardousBodies(hazardousNEOs);
-                console.log(response.data.near_earth_objects);
+               // console.log(response.data.near_earth_objects);
             } catch (error) {
                 console.error('Error fetching NEO data:', error);
             }
@@ -34,8 +34,8 @@ const NEOScene = () => {
     const distanceFromSun = neo.orbital_data.semi_major_axis*13;
     const initialAngle = Math.random() * Math.PI * 2; // Random starting angle
     const speed = (distanceFromSun*Math.PI*2)/neo.orbital_data.orbital_period;
-    console.log(speed);
-    console.log(distanceFromSun);
+   // console.log(speed);
+    //console.log(distanceFromSun);
     //console.log(hazardousBodies);
     return (
         <HazardousBody
