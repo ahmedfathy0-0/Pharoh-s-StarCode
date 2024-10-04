@@ -2,12 +2,8 @@
 // import React from 'react';
 import React, { useState } from 'react';
 import { createBrowserRouter, createRoutesFromElements, Route, Outlet, RouterProvider} from 'react-router-dom';
-<<<<<<< HEAD
 import MainOrrery from './pages/MainOrrery';
-=======
-import MainOrrery from './pages/mainorrery';
 import Sidebar from './components/Sidebar';
->>>>>>> 6760b0e2bd9c7917c8d915b6e330d41ef22b11d1
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WelcomePage from './pages/WelcomePage';
