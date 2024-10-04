@@ -101,13 +101,6 @@
   position: absolute;
 }
 
-.moon-icon::before {
-  content: ""; 
-  display: inline-block;
-  font-size: 20px; 
-  margin-right: 10px; 
-}
-
 
 .sidebar-button {
   position: absolute;

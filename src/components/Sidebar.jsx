@@ -16,7 +16,6 @@ import neptuneImage from '../images/Neptune.png';
 
 const Sidebar = ({ isOpen, toggleSidebar, onPlanetClick }) => {
   const [expandedMoons, setExpandedMoons] = useState([false, false, false, false, false, false, false, false]);
-
   const toggleMoons = (id) => {
     setExpandedMoons(() => ({
       [0]: false,
@@ -28,6 +27,7 @@ const Sidebar = ({ isOpen, toggleSidebar, onPlanetClick }) => {
       [6]: false,
       [id]: true,
     }));
+
   };
 
   return (
