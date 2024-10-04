@@ -5,17 +5,122 @@
 	box-sizing: border-box;
 }
 body {
-	min-height: 100vh;
 	display: grid;
 	place-items: center;
 	font-family: system-ui, sans-serif;
 	font-size: calc(1rem + 1vw);
 	line-height: 1;
+	overflow-y: auto;
 }
 img {
 	max-width: 100%;
 	object-fit: cover;
 }
+.page-container {
+    position: relative;
+    display: flex; /* Change to flex to adjust based on content */
+    flex-direction: column; /* Ensure items are stacked vertically */
+    align-items: center; /* Center items horizontally */
+    background-color: #1f2937;
+    padding: 0rem 1rem;
+    color: #e5e7eb;
+    width: 100%; /* Ensure it takes full width up to max-width */
+    height: 100%;
+	border-radius: 8px; /* Optional: Add some rounding to the corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
+}
+  .relative.z-10.flex.flex-col.items-center {
+	display: flex; /* Ensure it's a flex container */
+	flex-direction: column; /* Stack items vertically */
+	justify-content: center; /* Center items vertically */
+	align-items: center; /* Center items horizontally */
+	width: 80%; /* Make it full width */
+
+  }
+  .beta-badge {
+	margin-top: 1.5rem; /* mt-6 */
+	margin-bottom: 0.375rem; 
+	display: inline-block;
+	border-radius: 9999px; 
+	background-color: rgba(75, 85, 99, 0.5); 
+	padding: 0.375rem 0.75rem; 
+	font-size: 0.875rem; 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  
+  .title {
+	max-width: 48rem; /* max-w-3xl */
+	background: linear-gradient(to bottom right, #ffffff, #d1d5db); /* bg-gradient-to-br from-white to-gray-400 */
+	-webkit-background-clip: text;
+	color: transparent;
+	text-align: center;
+	font-size: 1.875rem; /* text-3xl */
+	font-weight: 500; /* font-medium */
+	line-height: 1.5; /* leading-tight */
+  }
+  
+  .text {
+	margin: 1.5rem 0; /* my-6 */
+	max-width: 40rem; /* max-w-xl */
+	text-align: center;
+	font-size: 1rem; /* text-base */
+	line-height: 1.5; /* leading-relaxed */
+  }
+  
+  .next-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	gap: 1.5rem;
+	width: fit-content;
+	border-radius: 9999px; 
+	background-color: rgba(30, 41, 59, 0.1); 
+	padding: 0.5rem 1rem; 
+	color: #e5e7eb; 
+	transition: background-color 0.2s;
+	margin-top: 5rem;
+  }
+  
+  .next-button:hover {
+	background-color: rgba(30, 41, 59, 0.5); /* hover:bg-gray-950/50 */
+  }
+  
+  .next-button:active {
+	transform: scale(0.985);
+  }
+  
+  .next-button-icon {
+	transition: transform 0.2s;
+  }
+  
+  .next-button:hover .next-button-icon {
+	transform: rotate(-45deg);
+  }
+  
+  .canvas {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+  }
+
+  h1 {
+	margin-bottom: 20px;
+	font-size: 2.5rem;
+  }
+  
+  p {
+	font-size: 1.2rem;
+	max-width: 800px;
+	margin-bottom: 30px;
+  }
+  
+  button {
+	margin-top: 20px;
+  }
+  
 
 .ebook-container {
     margin-top: 50px;
@@ -72,4 +177,58 @@ img {
 		width: 3em; /* Widen in the middle */
 	  }
   }
+
+  .testimonial-container {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2rem; /* Space between items */
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* To position the scrolling effect */
+    max-width: 1200px; /* Limit width */
+    margin: 0 auto; /* Center the container */
+}
+
+.testimonial-item {
+    background: rgba(75, 85, 99, 0.1); /* Background for testimonial */
+    border-radius: 8px;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-item:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+.testimonial-item img {
+    border-radius: 50%; /* Circular profile images */
+    width: 100px; /* Size of images */
+    height: 100px; /* Size of images */
+    object-fit: cover; /* Cover image */
+    margin-bottom: 1rem;
+}
+.social-links {
+    display: flex;
+    gap: 1rem; /* Adjust spacing between buttons */
+    margin-top: 1rem; /* Add space above the social links */
+}
+
+.social-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px; /* Adjust size */
+    height: 36px; /* Adjust size */
+    border-radius: 50%; /* Make buttons circular */
+    background-color: #e5e7eb; /* Background color for the button */
+    color: #1f2937; /* Icon color */
+    transition: background-color 0.3s, transform 0.2s; /* Add transition effects */
+}
+
+.social-button:hover {
+    background-color: #1f2937; /* Change background on hover */
+    color: #e5e7eb; /* Change icon color on hover */
+    transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+
 

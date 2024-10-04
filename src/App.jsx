@@ -2,11 +2,14 @@
 // import React from 'react';
 import React, { useState } from 'react';
 import { createBrowserRouter, createRoutesFromElements, Route, Outlet, RouterProvider} from 'react-router-dom';
-import MainOrrery from './pages/mainorrery';
+import MainOrrery from './pages/MainOrrery';
 import Sidebar from './components/Sidebar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Ebook from './pages/Ebook';
+import WelcomePage from './pages/WelcomePage';
+import TeamPage from './pages/TeamPage';
+import ExplorePage from './pages/ExplorePage';
+
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);  // State to manage sidebar visibility
 
@@ -16,9 +19,11 @@ const App = () => {
   const MemoizedMainOrrery = React.memo(MainOrrery);
   const router=createBrowserRouter(
     createRoutesFromElements(
-      <Route path='/' element={<Layout/>}>
-        <Route index element={<Ebook/>}/>
-        <Route path='/solar' element={<MainOrrery/>}/>
+        <Route element={<Layout/>}>
+          <Route path="/solar" element={<MainOrrery />} />
+          <Route path="/" element={<WelcomePage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/explore" element={<ExplorePage />} />
         </Route>
         )
   )
