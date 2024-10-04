@@ -45,13 +45,13 @@ const Planet = ({
   const moonsData = {
     1: [],
     2: [],
-    3: [{ size: 0.086, distance: 1.5, speedFactor: 1 }], // Earth has one moon
-    4: [{ size: 0.053, distance: 1, speedFactor: 1 }], // Mars has 2 moons (let's assume one for now)
+    3: [{ size: 0.086, distance: 1.5, speedFactor: 1 }], 
+    4: [{ size: 0.053, distance: 1, speedFactor: 1 }], 
     5: [
-      { size: 0.35, distance: 10, speedFactor: 0.8 }, // Example moons for Jupiter
+      { size: 0.35, distance: 10, speedFactor: 0.8 }, 
       { size: 0.3, distance: 12, speedFactor: 1.2 },
     ],
-    6: [{ size: 0.25, distance: 10, speedFactor: 1 }], // Example moon for Saturn
+    6: [{ size: 0.25, distance: 10, speedFactor: 1 }], 
     7: [], // Uranus
     8: [], // Neptune
   };
@@ -78,9 +78,9 @@ const Planet = ({
   switch (id) {
     case 1: {
       // Mercury
-      size = 0.4; // scaled radius
-      xRadius = 0.486 * 13; // Mercury semi-major axis scaled
-      zRadius = 0.486 * 13; // Mercury semi-major axis scaled
+      size = 0.4; 
+      xRadius = 0.486 * 13;
+      zRadius = 0.486 * 13; 
       tiltangle = 0;
       offset = 1;
       speed = (2 * Math.PI * speedFactor) / SECONDS_IN_A_DAY;
@@ -90,8 +90,8 @@ const Planet = ({
     case 2: {
       // Venus
       size = 0.95;
-      xRadius = 0.723 * 13; // Venus semi-major axis scaled
-      zRadius = 0.723 * 13; // Venus semi-major axis scaled
+      xRadius = 0.723 * 13; 
+      zRadius = 0.723 * 13; 
       tiltangle = 10 * 0.01;
       speed = (2 * Math.PI * speedFactor) / (5 * SECONDS_IN_A_DAY);
       rotationspeed =
@@ -102,8 +102,8 @@ const Planet = ({
     case 3: {
       // Earth
       size = 1;
-      xRadius = 1 * 13; // Earth semi-major axis scaled
-      zRadius = 1 * 13; // Earth semi-major axis scaled
+      xRadius = 1 * 13; 
+      zRadius = 1 * 13; 
       tiltangle = -10 * 0.01;
       speed = (2 * Math.PI * 1.3 * speedFactor) / (365 * SECONDS_IN_A_DAY);
       rotationspeed =
@@ -114,8 +114,8 @@ const Planet = ({
     case 4: {
       // Mars
       size = 0.53;
-      xRadius = 1.524 * 13; // Mars semi-major axis scaled
-      zRadius = 1.524 * 13; // Mars semi-major axis scaled
+      xRadius = 1.524 * 13; 
+      zRadius = 1.524 * 13; 
       tiltangle = 14 * 0.01;
       speed = (2 * Math.PI * speedFactor) / (20 * SECONDS_IN_A_DAY);
       rotationspeed =
@@ -126,8 +126,8 @@ const Planet = ({
     case 5: {
       // Jupiter
       size = 6.5;
-      xRadius = 5.203 * 13; // Jupiter semi-major axis scaled
-      zRadius = 5.203 * 13; // Jupiter semi-major axis scaled
+      xRadius = 5.203 * 13; 
+      zRadius = 5.203 * 13;
       tiltangle = -5 * 0.01;
       speed = (2 * Math.PI * speedFactor) / (40 * SECONDS_IN_A_DAY);
       rotationspeed =
@@ -138,8 +138,8 @@ const Planet = ({
     case 6: {
       // Saturn
       size = 5.7;
-      xRadius = 9.537 * 13; // Saturn semi-major axis scaled
-      zRadius = 9.537 * 13; // Saturn semi-major axis scaled
+      xRadius = 9.537 * 13; 
+      zRadius = 9.537 * 13; 
       tiltangle = -1 * 0.01;
       speed = (2 * Math.PI * speedFactor) / (80 * SECONDS_IN_A_DAY);
       rotationspeed =
@@ -150,8 +150,8 @@ const Planet = ({
     case 7: {
       // Uranus
       size = 4;
-      xRadius = 19.191 * 13; // Uranus semi-major axis scaled
-      zRadius = 19.191 * 13; // Uranus semi-major axis scaled
+      xRadius = 19.191 * 13; 
+      zRadius = 19.191 * 13; 
       tiltangle = 7 * 0.01;
       speed = (2 * Math.PI * speedFactor) / (160 * SECONDS_IN_A_DAY);
       rotationspeed =
@@ -162,8 +162,8 @@ const Planet = ({
     case 8: {
       // Neptune
       size = 3.4;
-      xRadius = 30.019 * 13; // Neptune semi-major axis scaled
-      zRadius = 30.019 * 13; // Neptune semi-major axis scaled
+      xRadius = 30.019 * 13; 
+      zRadius = 30.019 * 13; 
       tiltangle = 0;
       speed = (2 * Math.PI * speedFactor) / (320 * SECONDS_IN_A_DAY);
       rotationspeed =
@@ -174,8 +174,8 @@ const Planet = ({
     case 9: {
       // Sun
       size = 100; // Sun radius scaled
-      xRadius = 0; // Sun does not orbit
-      zRadius = 0; // Sun does not orbit
+      xRadius = 0; 
+      zRadius = 0; 
       speed = 0;
       offset = 0;
       rotationspeed = 0.001 * rotationSpeedFactor;
@@ -198,13 +198,13 @@ const Planet = ({
 
   useFrame((state, delta) => {
     const elapsedTime = state.clock.getElapsedTime();
-    const t = elapsedTime * speed + offset; // Use delta time for calculations
+    const t = elapsedTime * speed + offset; 
     planetRef.current.position.x = xRadius * Math.sin(t);
     planetRef.current.position.z = zRadius * Math.cos(t);
     planetRef.current.rotation.y += rotationspeed;
 
     const worldPosition = new THREE.Vector3();
-    planetRef.current.getWorldPosition(worldPosition); // Get the correct world position
+    planetRef.current.getWorldPosition(worldPosition);
 
     setCurrentPosition(worldPosition);
 

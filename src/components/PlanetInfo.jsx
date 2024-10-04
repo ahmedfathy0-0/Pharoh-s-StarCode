@@ -5,7 +5,7 @@ const PlanetInfo = ({ planetInfo, handleClose }) => {
   const { text, para, lengthOfYear, distanceFromSun, numberOfMoon, videoUrl, mcqs ,RelationshipToEarth="" } = planetInfo;
   const [selectedOptions, setSelectedOptions] = useState({});
   const [isAnswered, setIsAnswered] = useState({});
-  const [currentPage, setCurrentPage] = useState('info'); // State to track the current page
+  const [currentPage, setCurrentPage] = useState('info'); 
 
   const handleOptionChange = (questionIndex, option) => {
     setSelectedOptions((prev) => ({
@@ -18,14 +18,12 @@ const PlanetInfo = ({ planetInfo, handleClose }) => {
     event.preventDefault();
     const questionIndex = parseInt(event.target.dataset.index, 10);
     
-    // Mark the question as answered
     setIsAnswered((prev) => ({
       ...prev,
       [questionIndex]: true,
     }));
   };
 
-  // Function to navigate between pages
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
@@ -100,7 +98,6 @@ const PlanetInfo = ({ planetInfo, handleClose }) => {
                   <button type="submit">Submit</button>
                 </form>
               ) : (
-                // Display the result after answering
                 <div>
                   <p>{mcq.question}</p>
                   {mcq.options.map((option, index) => (

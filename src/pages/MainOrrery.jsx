@@ -4,8 +4,39 @@ import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 import { Leva, useControls } from 'leva';
 import Sun from '../components/Sun';
+import Planet from '../components/Planet';
 import Lights from '../components/Lights';
+import Asteroid from '../components/Asteroid';
 import '../App.css';
+import planetData from '../components/PlanetData'; 
+import NEOScene from '../components/NeoScene';
+import CameraController from '../components/CameraController';
+import PlanetInfo from '../components/PlanetInfo';
+import MoonInfo from '../components/MoonInfo';
+import moonData from '../components/MoonData';
+import PlanetsAPI from '../components/RetriveData';
+
+const generateAsteroidBelt = (count, marsOrbit, jupiterOrbit) => {
+  const positions = [];
+  for (let i = 0; i < count; i++) {
+      const angle = Math.random() * 2 * Math.PI;
+      const radius = Math.random() * (jupiterOrbit.xRadius - marsOrbit.xRadius) + marsOrbit.xRadius; 
+
+      const x = radius * Math.cos(angle);
+      const z = (radius * (marsOrbit.zRadius / marsOrbit.xRadius)) * Math.sin(angle); 
+
+      positions.push([x, 0, z]);
+  }
+  return positions;
+};
+const CameraManager = ({ setCameraPosition }) => {
+  const { camera } = useThree();  
+  useFrame(() => {
+    setCameraPosition(camera.position.clone());
+  });
+
+  return null;
+};
 
 const MainOrrery = () => {
   
@@ -33,6 +64,10 @@ const MainOrrery = () => {
 
   };
 
+  const asteroidPositions = generateAsteroidBelt(0, { xRadius: 66, zRadius: 54 }, { xRadius: 76, zRadius: 64 });
+  const planetInfo = planetData.find((p) => p.id === selectedPlanet);
+  const moonInfo = moonData.find((m) => m.id === selectedPlanet); 
+ 
 
   return (
     <>
@@ -40,7 +75,7 @@ const MainOrrery = () => {
       <Canvas camera={{ position: [0, 600, 750], fov: 45, near: 0.1, far: 10000 }}>
       <Suspense fallback={null}>
           <Sun />
-          {/* {[...Array(8)].map((_, index) => (
+          {[...Array(8)].map((_, index) => (
            <Planet
             key={index + 1}
             id={index + 1}
@@ -51,16 +86,28 @@ const MainOrrery = () => {
             rotFactor={speedFactor/10}
           />
           ))}
-          <NEOScene /> */}
-          {/* Uncomment this line when you want to render asteroids */}
-          {/* {asteroidPositions.map((position, index) => <Asteroid key={index} position={position} />)} */}
+          <NEOScene />
           <Lights />
           <OrbitControls 
             enableZoom={true}
             zoomSpeed={5} 
           />          
+          <CameraManager setCameraPosition={setCameraPosition} />
+           <CameraController 
+              planetPosition={planetPosition}
+              isclicked={isclicked}
+              currentCameraPosition={cameraPosition} 
+              selectedPlanet={selectedPlanet}
+            /> 
         </Suspense>
       </Canvas>
+
+      {planetInfo && (
+        <PlanetInfo planetInfo={planetInfo} handleClose={handleClose} />
+      )}
+      {moonInfo && (
+        <MoonInfo moonInfo={moonInfo} handleClose={handleClose} />
+      )}
     </>
   );
 };
