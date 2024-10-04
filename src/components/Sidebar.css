@@ -87,18 +87,11 @@
 }
 
 
-.moon-icon::before {
-  content: "🌕"; 
-  display: inline-block;
-  font-size: 20px; 
-  margin-right: 10px;
-}
-
 
 .sidebar-button {
   position: absolute;
   width: 50px;
-  top: 50%;
+  top: 90%;
   right: -50px;
   transform: translateY(-50%);
   background-color: #363b4a;

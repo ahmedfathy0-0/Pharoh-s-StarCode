@@ -7,10 +7,23 @@ const Sidebar = ({ isOpen, toggleSidebar, onPlanetClick }) => {
 
   // Toggle moons visibility for the clicked planet
   const toggleMoons = (planet) => {
-    setExpandedMoons((prevState) => ({
-      ...prevState,
-      [planet]: !prevState[planet], // Toggle the state for the clicked planet
-    }));
+    setExpandedMoons((prevState) => {
+      
+      const isCurrentlyOpen = prevState[planet] || false; // Check if the clicked planet's moons are currently open
+      const newExpandedMoons = {};
+
+      // Close all moons
+      Object.keys(prevState).forEach((key) => {
+        newExpandedMoons[key] = false;
+      });
+
+      // Open the clicked planet's moons if they were closed
+      if (!isCurrentlyOpen) {
+        newExpandedMoons[planet] = true;
+      }
+
+      return newExpandedMoons;
+    });
   };
 
   return (
