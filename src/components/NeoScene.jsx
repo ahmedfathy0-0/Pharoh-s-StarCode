@@ -6,6 +6,7 @@ const NEO_API_KEY = 'AhodELbZDubIXydMX1tddShcSkQceF13wuatO1Zg';
 const NEO_API_URL = `https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=${NEO_API_KEY}`;
 
 const NEOScene = ({ onClick, setPlanetPosition, selectedPlanet,Labels }) => {
+
     const [hazardousBodies, setHazardousBodies] = useState([]);
 
     useEffect(() => {
