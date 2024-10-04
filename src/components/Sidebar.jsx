@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
 import { FiArrowRight } from "react-icons/fi";
-import mercuryImage from '../images/mercury.png';
-import venusImage from '../images/venus.png';
-import earthImage from '../images/earth.png';
-import moonImage from '../images/moon.png';
-import marsImage from '../images/mars.png';
-import phobosImage from '../images/phobos.png';
-import jupiterImage from '../images/jupiter.png';
-import europaImage from '../images/europa.png';
-import saturnImage from '../images/saturn.png';
-import titanImage from '../images/titan.png';
-import uranusImage from '../images/uranus.png';
-import neptuneImage from '../images/neptune.png';
+import mercuryImage from '../images/Mercury.png';
+import venusImage from '../images/Venus.png';
+import earthImage from '../images/Earth.png';
+import moonImage from '../images/Moon.png';
+import marsImage from '../images/Mars.png';
+import phobosImage from '../images/Phobos.png';
+import jupiterImage from '../images/Jupiter.png';
+import europaImage from '../images/Europa.png';
+import saturnImage from '../images/Saturn.png';
+import titanImage from '../images/Titan.png';
+import uranusImage from '../images/Uranus.png';
+import neptuneImage from '../images/Neptune.png';
 
 const Sidebar = ({ isOpen, toggleSidebar, onPlanetClick }) => {
   const [expandedMoons, setExpandedMoons] = useState([false, false, false, false, false, false, false, false]);
@@ -34,77 +34,87 @@ const Sidebar = ({ isOpen, toggleSidebar, onPlanetClick }) => {
     <div className={`sidebar ${isOpen ? 'open' : ''}`}>
       <h2>NAVIGATION</h2>
       <ul className="planets">
-        <li className='Mercury' onClick={() => onPlanetClick(1)}>
-          <img src={mercuryImage} alt="Mercury" />
-          <a href="#">Mercury</a>
+        <li className='Mercury' onClick={() => {onPlanetClick(1); toggleSidebar();}}>
+          <a href="#"> <img src={mercuryImage} alt="Mercury" />
+           Mercury</a>
         </li>
-        <li className='Venus' onClick={() => onPlanetClick(2)}>
-          <img src={venusImage} alt="Venus" />
-          <a href="#">Venus</a>
+        <li className='Venus' onClick={() => {onPlanetClick(2); toggleSidebar();}}>
+          <a href="#"> <img src={venusImage} alt="Venus" />
+            Venus</a>
         </li>
-        <li className='Earth' onClick={() => onPlanetClick(3)}>
-          <img src={earthImage} alt="Earth" />
-          <a href="#">Earth 
+        <li className='Earth' onClick={() => {onPlanetClick(3); toggleSidebar();}}>
+          
+          <a href="#"><img src={earthImage} alt="Earth" />
+            Earth 
             {!expandedMoons[3] && (
               <FiArrowRight className="moon-icon" onClick={(e) => { e.stopPropagation(); toggleMoons(3); }} />
             )}
           </a>
           <ul className={expandedMoons[3] ? 'show' : ''}>
-            <li className='Moon' onClick={(e) => { e.stopPropagation(); onPlanetClick(13); }}>
-              <img src={moonImage} alt="Moon" />
-              <a href="#">Moon</a>
+            <li className='Moon' onClick={(e) => { e.stopPropagation(); onPlanetClick(13);  toggleSidebar();}}>
+              
+              <a href="#"><img src={moonImage} alt="Moon" />
+                Moon</a>
             </li>
           </ul>
         </li>
-        <li className='Mars' onClick={() => onPlanetClick(4)}>
-          <img src={marsImage} alt="Mars" />
-          <a href="#">Mars 
+        <li className='Mars' onClick={() => {onPlanetClick(4); toggleSidebar();}}>
+          
+          <a href="#"><img src={marsImage} alt="Mars" />
+            Mars 
             {!expandedMoons[4] && (
               <FiArrowRight className="moon-icon" onClick={(e) => { e.stopPropagation(); toggleMoons(4); }} />
             )}
           </a>
           <ul className={expandedMoons[4] ? 'show' : ''}>
-            <li className='Phobos' onClick={(e) => { e.stopPropagation(); onPlanetClick(14); }}>
-              <img src={phobosImage} alt="Phobos" />
-              <a href='#'>Phobos</a>
+            <li className='Phobos' onClick={(e) => { e.stopPropagation(); onPlanetClick(14); toggleSidebar(); }}>
+              
+              <a href='#'><img src={phobosImage} alt="Phobos" />
+                Phobos</a>
             </li>
           </ul>
         </li>
-        <li className='Jupiter' onClick={() => onPlanetClick(5)}>
-          <img src={jupiterImage} alt="Jupiter" />
-          <a href="#">Jupiter 
+        <li className='Jupiter' onClick={() => {onPlanetClick(5); toggleSidebar();}}>
+          
+          <a href="#"><img src={jupiterImage} alt="Jupiter" />
+            Jupiter 
             {!expandedMoons[5] && (
               <FiArrowRight className="moon-icon" onClick={(e) => { e.stopPropagation(); toggleMoons(5); }} />
             )}
           </a>
           <ul className={expandedMoons[5] ? 'show' : ''}>
-            <li className='Europa' onClick={(e) => { e.stopPropagation(); onPlanetClick(15); }}>
-              <img src={europaImage} alt="Europa" />
-              <a href='#'>Europa</a>
+            <li className='Europa' onClick={(e) => { e.stopPropagation(); onPlanetClick(15); toggleSidebar();}}>
+              
+              <a href='#'><img src={europaImage} alt="Europa" />
+                Europa</a>
             </li>
           </ul>
         </li>
-        <li className='Saturn' onClick={() => onPlanetClick(6)}>
-          <img src={saturnImage} alt="Saturn" />
-          <a href="#">Saturn  
+        <li className='Saturn' onClick={() => {onPlanetClick(6); toggleSidebar();}}>
+          
+          <a href="#"><img src={saturnImage} alt="Saturn" />
+            Saturn  
             {!expandedMoons[6] && (
-              <FiArrowRight className="moon-icon" onClick={(e) => { e.stopPropagation(); toggleMoons(6); }} />
+              <FiArrowRight className="moon-icon" onClick={(e) => { e.stopPropagation(); toggleMoons(6);  }} />
             )}
           </a>
           <ul className={expandedMoons[6] ? 'show' : ''}>
-            <li className='Titan' onClick={(e) => { e.stopPropagation(); onPlanetClick(16); }}>
-              <img src={titanImage} alt="Titan" />
-              <a href='#'>Titan</a>
+            <li className='Titan' onClick={(e) => { e.stopPropagation(); onPlanetClick(16); toggleSidebar();}}>
+              
+              <a href='#'><img src={titanImage} alt="Titan" />
+                Titan</a>
             </li>
           </ul>
         </li>
-        <li className='Uranus' onClick={() => onPlanetClick(7)}>
-          <img src={uranusImage} alt="Uranus" />
-          <a href="#">Uranus</a>
+        <li className='Uranus' onClick={() => {toggleSidebar(); onPlanetClick(7);}}>
+          
+          <a href="#"><img src={uranusImage} alt="Uranus" />
+            Uranus</a>
         </li>
-        <li className='Neptune' onClick={() => onPlanetClick(8)}>
-          <img src={neptuneImage} alt="Neptune" />
-          <a href="#">Neptune</a>
+        <li className='Neptune' onClick={() => {onPlanetClick(8); toggleSidebar();}}>
+          
+          <a href="#"><img src={neptuneImage} alt="Neptune" />
+            Neptune</a>
         </li>
       </ul>
 
