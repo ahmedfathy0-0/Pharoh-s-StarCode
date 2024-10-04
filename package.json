@@ -25,6 +25,7 @@
     "react-router-dom": "^6.26.2",
     "react-scripts": "^3.0.1",
     "sass": "^1.79.4",
+    "stl-loader": "^1.0.0",
     "three": "^0.168.0"
   },
   "devDependencies": {

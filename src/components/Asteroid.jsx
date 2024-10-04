@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
 
+
 const Asteroid = ({ position }) => {
     const asteroidRef = useRef();
     const texture = useTexture(asteroidTexture); 

@@ -1,26 +1,40 @@
 import React, { useRef, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Text } from '@react-three/drei';
 import * as THREE from 'three';
+import { TextureLoader } from 'three/src/loaders/TextureLoader';
 
-const HazardousBody = ({ size, distanceFromSun, speed, rotationspeed, initialAngle,name }) => {
+const HazardousBody = ({ size, distanceFromSun, speed, rotationspeed, initialAngle }) => {
     const meshRef = useRef();
-    const angleRef = useRef(initialAngle); // Keep track of the current angle
+    const angleRef = useRef(initialAngle);
+    const textureRef = useRef(null);
+
+    // Load the asteroid texture
+    useEffect(() => {
+        const loader = new TextureLoader();
+        loader.load('../textures/2k_moon.jpg', (texture) => {
+            texture.wrapS = texture.wrapT = THREE.RepeatWrapping; // Repeat texture
+            texture.offset.set(0, 0); // Offset texture
+            textureRef.current = texture;
+        });
+    }, []);
 
     const createIrregularShape = (size) => {
         const geometry = new THREE.BufferGeometry();
         const vertices = [];
 
-        // Generate random vertices for an irregular shape
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 1000; i++) { 
             const x = (Math.random() - 0.5) * size;
             const y = (Math.random() - 0.5) * size;
             const z = (Math.random() - 0.5) * size;
-            vertices.push(x, y, z);
+
+            const noise = Math.sin(x * 2) * Math.cos(y * 2) * Math.sin(z * 2);
+            const displacement = noise * (size / 10); 
+
+            vertices.push(x + displacement, y + displacement, z + displacement);
         }
 
         geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-        geometry.computeVertexNormals(); // Optional: Compute normals for shading
+        geometry.computeVertexNormals();
         return geometry;
     };
 
@@ -28,41 +42,28 @@ const HazardousBody = ({ size, distanceFromSun, speed, rotationspeed, initialAng
 
     useFrame(({ clock }) => {
         const delta = clock.getElapsedTime();
-        angleRef.current = speed * delta; // Increment the angle based on speed
-    
-        // Calculate elliptical orbit
-        const a = distanceFromSun; // Semi-major axis
-        const b = a * 0.7; // Example semi-minor axis for elliptical shape
-    
+        
+        angleRef.current += speed * delta * 0.0005; 
+        
+        const a = distanceFromSun;
+        const b = a * 0.7;
+
         const x = a * Math.cos(angleRef.current);
         const z = b * Math.sin(angleRef.current);
-        
-        // Optionally apply inclination
+
         const inclination = Math.PI / 16; // 22.5 degrees
         const y = Math.sin(inclination) * distanceFromSun;
-    
-        // Update position
+
         if (meshRef.current) {
             meshRef.current.position.set(x, y, z);
-        //    meshRef.current.rotation.y += rotationspeed * delta; // Rotate around its own axis
+            meshRef.current.rotation.y += rotationspeed * delta * 0.0005; 
         }
     });
-    
 
     return (
-        <>
-
         <mesh ref={meshRef} geometry={geometry}>
-        <Text
-        position={[0, 0, 0]}   // Position of the text
-        fontSize={1}          // Size of the text
-        color="red"           // Color of the text
-      >
-        {name}
-      </Text>
-            <meshStandardMaterial color="orange" />
+            <meshStandardMaterial map={textureRef.current} /> {/* Apply texture */}
         </mesh>
-        </>
     );
 };
 
