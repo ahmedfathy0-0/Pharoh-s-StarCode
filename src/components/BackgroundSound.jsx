@@ -9,7 +9,7 @@ const BackgroundSound = () => {
     const audio = audioRef.current;
     if (audio) {
       audio.play().catch((e) => {
-        console.log('Autoplay was prevented: ', e);
+       // console.log('Autoplay was prevented: ', e);
       });
 
       // Replay audio when it ends

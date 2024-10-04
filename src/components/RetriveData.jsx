@@ -33,7 +33,7 @@ const fetchPlanetPosition = async (planetId) => {
     });
   
     const data = await response.text(); // Horizons returns text
-    console.log(data);
+   // console.log(data);
   };
 
   // Example: Get position for Mars (ID: 499)

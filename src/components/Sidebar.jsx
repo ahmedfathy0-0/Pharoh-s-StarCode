@@ -8,20 +8,28 @@ const Sidebar = ({ isOpen, toggleSidebar ,onPlanetClick }) => {
       <ul className="planets">
       <li className='Mercury' onClick={() => onPlanetClick(1)}><a href="#">Mercury</a></li>
       <li className='Venus' onClick={() => onPlanetClick(2)}><a href="#">Venus</a></li>
-      <li className='Earth' onClick={() => onPlanetClick(3)}><a href="#">Earth</a>      <ul>
-            <li className='Moon' onClick={() => onPlanetClick(13)}><a href=''>Moon</a></li>
-            </ul>
-        </li>
-        <li className='Mars' onClick={() => onPlanetClick(4)}><a href="#">Mars</a>            <ul>
-            <li className='Phobos' onClick={() => onPlanetClick(14)}><a href=''>Phobos</a></li>
-            </ul>
+      <li className='Earth' onClick={() => onPlanetClick(3)}>
+          <a href="#">Earth</a>
+          <ul>
+              <li className='Moon' onClick={(e) => { e.stopPropagation(); onPlanetClick(13); }}>
+                  <a href="#">Moon</a>
+              </li>
+          </ul>
+      </li>
+        <li className='Mars' onClick={() => onPlanetClick(4)}>
+          <a href="#">Mars</a>           
+           <ul>
+            <li className='Phobos' onClick={(e) => { e.stopPropagation(); onPlanetClick(14); }}>
+              <a href='#'>Phobos</a>
+            </li>
+          </ul>
         </li>
         <li className='Jupiter' onClick={() => onPlanetClick(5)}><a href="#">Jupiter</a>            <ul>
-            <li className='Europa' onClick={() => onPlanetClick(15)}><a href=''>Europa</a></li>
+            <li className='Europa' onClick={(e) => { e.stopPropagation(); onPlanetClick(15); }}><a href='#'>Europa</a></li>
             </ul>
         </li>
         <li className='Saturn' onClick={() => onPlanetClick(6)}><a href="#">Saturn</a>            <ul>
-            <li className='Titan' onClick={() => onPlanetClick(16)}><a href=''>Titan</a></li>
+            <li className='Titan' onClick={(e) => { e.stopPropagation(); onPlanetClick(16); }}><a href='#'>Titan</a></li>
             </ul>
         </li>
         <li className='Uranus' onClick={() => onPlanetClick(7)}><a href="#">Uranus</a></li>

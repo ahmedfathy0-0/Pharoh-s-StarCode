@@ -81,7 +81,7 @@ const CameraController = ({ planetPosition , isclicked, currentCameraPosition, s
   }
 }
   useEffect(() => {
-    console.log(selectedPlanet);
+    //console.log(selectedPlanet);
     if(isclicked) {
     if (planetPosition) {
         targetPosition.current.set(

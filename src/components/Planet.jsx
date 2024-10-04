@@ -34,19 +34,19 @@ const Planet = ({ id, onClick,setPlanetPosition, selectedPlanet,spFactor, rotFac
   const [rotationSpeedFactor, setRotationSpeedFactor] = useState(rotFactor);
   const [currentPosition, setCurrentPosition] = useState(null);
   const [moonClicked, setMoonClicked] = useState(false);
-  const [moonsideClicked, setMoonSideClicked] = useState(false);
+  const [moonsideClicked, setMoonsideClicked] = useState(false);
 
 
   const moonsData = {
     1: [],
     2: [], 
-    3: [{ size: 0.086, distance: 1.5, speedFactor: 1 }], // Earth has one moon
-    4: [{ size: 0.053, distance: 1, speedFactor: 1 }], // Mars has 2 moons (let's assume one for now)
+    3: [{ size: 0.086, distance: 1.5, speedFactor: 1 }], 
+    4: [{ size: 0.053, distance: 1, speedFactor: 1 }], 
     5: [
-      { size: 0.35, distance: 10, speedFactor: 0.8 }, // Example moons for Jupiter
+      { size: 0.35, distance: 10, speedFactor: 0.8 },
       { size: 0.3, distance: 12, speedFactor: 1.2 }
     ],
-    6: [{ size: 0.25, distance: 10, speedFactor: 1 }], // Example moon for Saturn
+    6: [{ size: 0.25, distance: 10, speedFactor: 1 }], 
     7: [], // Uranus
     8: [] // Neptune
   };
@@ -62,7 +62,7 @@ const Planet = ({ id, onClick,setPlanetPosition, selectedPlanet,spFactor, rotFac
   const moonhandleClick = (moonId) => {
     if(onClick){
       onClick(moonId+10);
-      console.log(moonId+10);
+     // console.log(moonId+10);
     }
     setMoonClicked(true);
   };
@@ -181,36 +181,28 @@ const Planet = ({ id, onClick,setPlanetPosition, selectedPlanet,spFactor, rotFac
   
   
   useFrame((state,delta) => {
-    console.log("//////");
-    console.log(selectedPlanet);
-    console.log(isClicked);
-    console.log(showMoons);
-    console.log(speedFactor);
-    console.log(rotationSpeedFactor);
-    console.log(currentPosition);
-    console.log(moonsideClicked);
-    console.log("//////");
     const elapsedTime = state.clock.getElapsedTime();
-    const t = elapsedTime * speed + offset; // Use delta time for calculations
+    const t = elapsedTime * speed + offset; 
     planetRef.current.position.x = xRadius * Math.sin(t);
     planetRef.current.position.z = zRadius * Math.cos(t);
     planetRef.current.rotation.y += rotationspeed;
 
     const worldPosition = new THREE.Vector3();
-    planetRef.current.getWorldPosition(worldPosition); // Get the correct world position
+    planetRef.current.getWorldPosition(worldPosition); 
 
     setCurrentPosition( worldPosition);
-    if( id === selectedPlanet - 10){
-      setMoonSideClicked(true);
-      setShowMoons(true);
-    }
-    else{
-      setShowMoons(false);
-      setMoonSideClicked(false);
-    }
+   // console.log(selectedPlanet);
+  
 
     if (id === selectedPlanet || id === selectedPlanet - 10) {
-      
+      if(id === selectedPlanet - 10){
+        setMoonsideClicked(true);
+        setMoonClicked(true);
+      }
+      else{
+        setMoonsideClicked(false);
+        setMoonClicked(false);
+      }
       setShowMoons(true);
       if(!moonClicked){
         setPlanetPosition(worldPosition); 
