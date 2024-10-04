@@ -5,13 +5,14 @@ import { useTexture } from '@react-three/drei';
 import earthMoon from '../textures/2k_moon.jpg';
 import phobos from '../textures/2k_phobos.jpg';
 import europa from '../textures/2k_europa.jpg';
+import titan from '../textures/2k_titan.jpg';
 import CameraController from './CameraController';
 
 const moonTextures = {
   3: [earthMoon],
   4: [phobos],
   5: [europa,europa],
-  6: [earthMoon],
+  6: [titan],
 };
 
 const Moon = ({index, id, size, distance, currentPosition, spFactor, rotFactor, setPlanetPosition, moonhandleClick, moonsideClicked }) => {
