@@ -1,51 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Sidebar.css';
 
-const Sidebar = ({ isOpen, toggleSidebar }) => {
-  const [expandedPlanets, setExpandedPlanets] = useState({});
-  const toggleMoons = (planet) => {
-    setExpandedPlanets((prevState) => ({
-      ...prevState,
-      [planet]: !prevState[planet],
-    }));
-  };
+const Sidebar = ({ isOpen, toggleSidebar ,onPlanetClick }) => {
   return (
     <div className={`sidebar ${isOpen ? 'open' : ''}`}>
       <h2>Navigation</h2>
       <ul className="planets">
-        <li className='Mercury'><a href="/">Mercury</a></li>
-        <li className='Venus'><a href="/">Venus</a></li>
-        <li className='Earth'>
-          <a href="/" onClick={(e) => { e.preventDefault(); toggleMoons('Earth'); }}>Earth</a>
-          {expandedPlanets['Earth'] && (
-            <ul>
-              <li className='Moon'><a href="/">Moon</a></li>
+      <li className='Mercury' onClick={() => onPlanetClick(1)}><a href="#">Mercury</a></li>
+      <li className='Venus' onClick={() => onPlanetClick(2)}><a href="#">Venus</a></li>
+      <li className='Earth' onClick={() => onPlanetClick(3)}><a href="#">Earth</a>      <ul>
+            <li className='Moon' onClick={() => onPlanetClick(13)}><a href=''>Moon</a></li>
             </ul>
-          )}
         </li>
-        <li className='Mars'><a href="/"onClick={(e) => { e.preventDefault(); toggleMoons('Mars'); }}>Mars</a>
-          {expandedPlanets['Mars'] && (
-            <ul>
-              <li className='Phobos'><a href="/">Phobos</a></li>
+        <li className='Mars' onClick={() => onPlanetClick(4)}><a href="#">Mars</a>            <ul>
+            <li className='Phobos' onClick={() => onPlanetClick(14)}><a href=''>Phobos</a></li>
             </ul>
-          )}
         </li>
-        <li className='Jupiter'><a href="/"onClick={(e) => { e.preventDefault(); toggleMoons('Jupiter'); }}>Jupiter</a>
-          {expandedPlanets['Jupiter'] && (
-            <ul>
-              <li className='Europa'><a href="/">Europa</a></li>
+        <li className='Jupiter' onClick={() => onPlanetClick(5)}><a href="#">Jupiter</a>            <ul>
+            <li className='Europa' onClick={() => onPlanetClick(15)}><a href=''>Europa</a></li>
             </ul>
-          )}
-          </li>
-        <li className='Saturn'><a href="/"onClick={(e) => { e.preventDefault(); toggleMoons('Saturn'); }}>Saturn</a>
-          {expandedPlanets['Saturn'] && (
-            <ul>
-              <li className='Titan'><a href="/">Titan</a></li>
+        </li>
+        <li className='Saturn' onClick={() => onPlanetClick(6)}><a href="#">Saturn</a>            <ul>
+            <li className='Titan' onClick={() => onPlanetClick(16)}><a href=''>Titan</a></li>
             </ul>
-          )}
-          </li>
-        <li className='Uranus'><a href="/">Uranus</a></li>
-        <li className='Neptune'><a href="/">Neptune</a></li>
+        </li>
+        <li className='Uranus' onClick={() => onPlanetClick(7)}><a href="#">Uranus</a></li>
+        <li className='Neptune' onClick={() => onPlanetClick(8)}><a href="#">Neptune</a></li>
       </ul>
 
       <div className="sidebar-button" onClick={toggleSidebar}>

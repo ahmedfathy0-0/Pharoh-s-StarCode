@@ -34,6 +34,8 @@ const Planet = ({ id, onClick,setPlanetPosition, selectedPlanet,spFactor, rotFac
   const [rotationSpeedFactor, setRotationSpeedFactor] = useState(rotFactor);
   const [currentPosition, setCurrentPosition] = useState(null);
   const [moonClicked, setMoonClicked] = useState(false);
+  const [moonsideClicked, setMoonSideClicked] = useState(false);
+
 
   const moonsData = {
     1: [],
@@ -179,6 +181,15 @@ const Planet = ({ id, onClick,setPlanetPosition, selectedPlanet,spFactor, rotFac
   
   
   useFrame((state,delta) => {
+    console.log("//////");
+    console.log(selectedPlanet);
+    console.log(isClicked);
+    console.log(showMoons);
+    console.log(speedFactor);
+    console.log(rotationSpeedFactor);
+    console.log(currentPosition);
+    console.log(moonsideClicked);
+    console.log("//////");
     const elapsedTime = state.clock.getElapsedTime();
     const t = elapsedTime * speed + offset; // Use delta time for calculations
     planetRef.current.position.x = xRadius * Math.sin(t);
@@ -189,6 +200,14 @@ const Planet = ({ id, onClick,setPlanetPosition, selectedPlanet,spFactor, rotFac
     planetRef.current.getWorldPosition(worldPosition); // Get the correct world position
 
     setCurrentPosition( worldPosition);
+    if( id === selectedPlanet - 10){
+      setMoonSideClicked(true);
+      setShowMoons(true);
+    }
+    else{
+      setShowMoons(false);
+      setMoonSideClicked(false);
+    }
 
     if (id === selectedPlanet || id === selectedPlanet - 10) {
       
@@ -228,6 +247,7 @@ const Planet = ({ id, onClick,setPlanetPosition, selectedPlanet,spFactor, rotFac
           rotFactor={rotFactor}Q
           setPlanetPosition={setPlanetPosition} 
           moonhandleClick={moonhandleClick}
+          moonsideClicked={moonsideClicked}
         />
       ))}
       </group>

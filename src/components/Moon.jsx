@@ -14,7 +14,7 @@ const moonTextures = {
   6: [earthMoon],
 };
 
-const Moon = ({index, id, size, distance, currentPosition, spFactor, rotFactor, setPlanetPosition, moonhandleClick }) => {
+const Moon = ({index, id, size, distance, currentPosition, spFactor, rotFactor, setPlanetPosition, moonhandleClick, moonsideClicked }) => {
 
     const moonRef = useRef();
     const texture = useTexture(moonTextures[id][index]);
@@ -48,7 +48,7 @@ const Moon = ({index, id, size, distance, currentPosition, spFactor, rotFactor, 
         const worldPosition = new THREE.Vector3();
         moonRef.current.getWorldPosition(worldPosition);
         offset += 0.01; 
-        if(isClicked){
+        if(isClicked||moonsideClicked){
             setPlanetPosition( worldPosition);
         }       
     }

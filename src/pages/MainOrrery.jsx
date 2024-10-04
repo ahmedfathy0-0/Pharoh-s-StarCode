@@ -130,7 +130,9 @@ const MainOrrery = () => {
         </Suspense>
       </Canvas>
       <div className="app-layout">
-      <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
+      <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar}
+         onPlanetClick={handlePlanetClick}
+      />
       </div>
 
       {planetInfo && (
