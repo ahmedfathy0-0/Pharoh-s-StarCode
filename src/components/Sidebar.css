@@ -2,94 +2,99 @@
 .sidebar {
   width: 250px;
   height: 100vh;
-  background-color: #363b4a; /* Dark background */
+  background-color: #363b4a; 
   padding: 20px;
   position: fixed;
   top: 0;
   left: -250px; /* Hidden initially */
-  transition: left 0.4s ease-in-out; /* Smooth transition */
-  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  transition:  0.4s; 
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3); 
   z-index: 1000;
-  border-radius: 0 20px 20px 0; /* Smooth rounded corners */
+  border-radius: 0 20px 20px 0; 
 }
 
-/* Sidebar Open State */
+
 .sidebar.open {
   left: 0;
 }
 
-/* Sidebar Header */
+
 .sidebar h2 {
   margin-bottom: 20px;
   font-size: 24px;
-  color: #191d21; /* Dark grey title */
+  color: #191d21; 
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  border-bottom: 2px solid #007bff; /* Stylish underline */
+  border-bottom: 2px solid #007bff; 
   padding-bottom: 10px;
+  text-align: center;
 }
 
-/* Sidebar Planet List */
+
 .planets {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* Planet List Item */
+
 .planets li {
   padding: 15px;
   margin: 10px 0;
   border-radius: 8px;
-  transition: background 0.3s;
+  transition:  0.3s;
   display: flex;
-  align-items: center; /* Center icons and text */
+  align-items: center; 
+  position: relative;
 }
 
-/* Hover Effect */
+
 .planets li:hover {
-  background-color: #e0e0e0; /* Light hover color */
+  background-color: #e0e0e0; 
   color: #191d21;
 }
 
-/* Planet Links */
+
 .planets li a {
-  color: #007bff; /* Blue links */
+  color: #007bff; 
   text-decoration: none;
   font-size: 18px;
   margin-left: 10px;
+  
+  
 }
 
-/* Moon List */
+
 .planets ul {
   list-style-type: none;
   padding-left: 20px;
-  display: none; /* Hidden initially */
+  display: none; 
+  margin-top: 5px;
 }
 
-/* Show Moons when Planet is Clicked */
-.planets li.show ul {
-  display: block; /* Reveal moons */
+
+.planets ul.show {
+  display: block; 
 }
 
-/* Moon Icon (beside planets with moons) */
+
 .moon-icon {
   cursor: pointer;
   display: inline-block;
-  margin-left: auto;
+  margin-left: auto; 
   font-size: 18px;
   color: #007bff;
 }
 
-/* Circular Moon Indicator */
+
 .moon-icon::before {
-  content: "🌓"; /* Moon symbol */
+  content: "🌕"; 
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px; 
   margin-right: 10px;
 }
 
-/* Sidebar Toggle Button */
+
 .sidebar-button {
   position: absolute;
   width: 50px;
@@ -102,15 +107,15 @@
   border-radius: 0 5px 5px 0;
   text-align: center;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition:  0.3s;
 }
 
-/* Hover Effect for Toggle Button */
+
 .sidebar-button:hover {
-  background-color: #007bff; /* Blue when hovered */
+  background-color: #007bff; 
 }
 
-/* Active State for Toggle Button */
+
 .sidebar.open + .sidebar-button {
-  right: 250px; /* Move with sidebar */
+  right: 250px; 
 }
