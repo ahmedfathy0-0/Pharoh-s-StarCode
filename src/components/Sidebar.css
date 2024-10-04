@@ -1,101 +1,121 @@
+/* Sidebar Container */
 .sidebar {
-    width: 250px;
-    height: 100vh;
-    background-color: #363b4a; 
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    left: -250px; 
-    transition:  0.3s;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-  
+  width: 250px;
+  height: 100vh;
+  background-color: #363b4a; 
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hidden initially */
+  transition:  0.4s; 
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3); 
+  z-index: 1000;
+  border-radius: 0 20px 20px 0; 
+}
 
-  .sidebar.open {
-    left: 0;
-  }
-  
 
-  .sidebar h2 {
-    margin: 0 0 15px;
-    font-size: 24px;
-    color: #191d21; 
-  }
-  
-  .sidebar ul a{
-    color: #007bff;
-  }
-  .planets {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    
-  }
-  
-  .planets li {
-    padding: 10px;
-    border-radius: 4px;
-    transition:  0.3s;
-  }
-  
-  .planets li:hover {
-    background-color: #e0e0e0; 
-  }
-  
+.sidebar.open {
+  left: 0;
+}
 
-  .planets ul {
-    list-style: none;
-    padding-left: 20px; 
-    display: block;
-    color: #191d21;
-  }
-  .planets ul li::before{
-    content: "\2022";
-    display: inline-block;
-    width: 1em;
-    font-weight: bold;
-  }
-  
 
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #191d21; 
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-bottom: 2px solid #007bff; 
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+
+.planets {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.planets li {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  transition:  0.3s;
+  display: flex;
+  align-items: center; 
+  position: relative;
+}
+
+
+.planets li:hover {
+  background-color: #e0e0e0; 
+  color: #191d21;
+}
+
+
+.planets li a {
+  color: #007bff; 
+  text-decoration: none;
+  font-size: 18px;
+  margin-left: 10px;
   
   
-  .moon-icon {
-    cursor: pointer;
-    display: inline-block;
-    width: 16px;  
-    height: 16px; 
-    border-radius: 50%;
-    margin-left: 40px;
-    position: relative;
-  }
-  
-  .moon-icon::after {
-    content: "→"; 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    right: -50px;
-    transform: translate(-50%, -50%);
-    font-size: 30px; 
-  }
-  
-  .sidebar-button {
-    position: absolute;
-    width:50px;
-    top: 50%;
-    right: -50px;
-    transform: translateY(-50%);
-    background-color: #363b4a;
-    padding: 0px;
-    cursor: pointer;
-    z-index: 1000; 
-    border-radius: 0 5px 5px 0; 
-    transition:  .3s;
-    color: black;
-  }
-  
-  .sidebar-button:hover {
-    background-color: white;
-  }
-  
+}
+
+
+.planets ul {
+  list-style-type: none;
+  padding-left: 20px;
+  display: none; 
+  margin-top: 5px;
+}
+
+
+.planets ul.show {
+  display: block; 
+}
+
+
+.moon-icon {
+  cursor: pointer;
+  display: inline-block;
+  margin-left: auto; 
+  font-size: 18px;
+  color: #007bff;
+}
+
+
+.moon-icon::before {
+  content: "🌕"; 
+  display: inline-block;
+  font-size: 20px; 
+  margin-right: 10px;
+}
+
+
+.sidebar-button {
+  position: absolute;
+  width: 50px;
+  top: 50%;
+  right: -50px;
+  transform: translateY(-50%);
+  background-color: #363b4a;
+  color: #fff;
+  padding: 15px 5px;
+  border-radius: 0 5px 5px 0;
+  text-align: center;
+  cursor: pointer;
+  transition:  0.3s;
+}
+
+
+.sidebar-button:hover {
+  background-color: #007bff; 
+}
+
+
+.sidebar.open + .sidebar-button {
+  right: 250px; 
+}
