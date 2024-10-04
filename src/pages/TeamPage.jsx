@@ -5,62 +5,68 @@ import { Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { useEffect,useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
+import AhmedFathy from '../TeamIMGs/Ahmed Fathy.jpg';
+import AmmarYasser from '../TeamIMGs/Ammar Yasser.jpg';
+import AbdallahAhmed from '../TeamIMGs/Abdallah Ahmed.jpg';
+import HabibaMahmoud from '../TeamIMGs/Habiba Mahmoud.jpg';
+import RahmaFathy from '../TeamIMGs/Rahma Fathy.jpg';
+import MohamedJamil from '../TeamIMGs/Mohamed Jamil.jpg';
 import {
-  useMotionTemplate,
-  useMotionValue,
-  motion,
-  animate,
+useMotionTemplate,
+useMotionValue,
+motion,
+animate,
 } from "framer-motion";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 const testimonials = [
     {
-        name: "Danica W.",
-        title: "Founder of XYZ",
-        text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa nostrum labore dolor.",
-        image: "path/to/image1.jpg",
-        github: "https://github.com/danicaw", 
-        linkedin: "https://linkedin.com/in/danicaw", 
+        name: "Ahmed Fathy",
+        title: "Software Engineer",
+        text: "",
+        image: AhmedFathy,
+        github: "https://github.com/ahmedfathy0-0", 
+        linkedin: "http://www.linkedin.com/in/ahmedfathy-x1", 
     },
     {
-        name: "Kevin K.",
-        title: "Founder of XYZ",
-        text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa nostrum labore dolor.",
-        image: "path/to/image2.jpg", 
-        github: "https://github.com/kevink", 
-        linkedin: "https://linkedin.com/in/kevink", 
+        name: "Ammar Yasser",
+        title: "Software Engineer ",
+        text: "",
+        image: AmmarYasser, 
+        github: "https://github.com/AMYasserF", 
+        linkedin: "http://www.linkedin.com/in/ammar-yasser-89695b2a2", 
     },
     {
-        name: "Danica W.",
-        title: "Founder of XYZ",
-        text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa nostrum labore dolor.",
-        image: "path/to/image1.jpg",
-        github: "https://github.com/danicaw", 
-        linkedin: "https://linkedin.com/in/danicaw", 
+        name: "Abdallah Ahmed",
+        title: "Software Engineer",
+        text: "",
+        image: AbdallahAhmed,
+        github: "https://github.com/Safan05", 
+        linkedin: "https://linkedin.com/in/danicaw",               //need to update
     },
     {
-        name: "Kevin K.",
-        title: "Founder of XYZ",
-        text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa nostrum labore dolor.",
-        image: "path/to/image2.jpg", 
-        github: "https://github.com/kevink", 
-        linkedin: "https://linkedin.com/in/kevink", 
+        name: "Habiba Mahmoud",
+        title: "Software Engineer",
+        text: "",
+        image: HabibaMahmoud, 
+        github: "https://github.com/HabibaMahmoud2005", 
+        linkedin: "https://www.linkedin.com/in/habiba-mahmoud-10aa2a2a2", 
     },
     {
-        name: "Danica W.",
-        title: "Founder of XYZ",
-        text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa nostrum labore dolor.",
-        image: "path/to/image1.jpg",
-        github: "https://github.com/danicaw", 
-        linkedin: "https://linkedin.com/in/danicaw", 
+        name: "Rahma Fathy",
+        title: "Systems and Biomedical Engineer",
+        text: "",
+        image: RahmaFathy,
+        github: "https://github.com/Rahma-Fathy-coder", 
+        linkedin: "https://www.linkedin.com/in/rahmafathy105/", 
     },
     {
-        name: "Kevin K.",
-        title: "Founder of XYZ",
-        text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa nostrum labore dolor.",
-        image: "path/to/image2.jpg", 
-        github: "https://github.com/kevink", 
-        linkedin: "https://linkedin.com/in/kevink", 
+        name: "Mohamed Jamil",
+        title: "Aerospace engineer",
+        text: "",
+        image: MohamedJamil, 
+        github: "https://github.com/Mohammed-gamil", 
+        linkedin: "https://www.linkedin.com/in/mohammed-gamil-86421226a/", 
     },
 ];
 
