@@ -42,7 +42,7 @@ const testimonials = [
         text: "",
         image: AbdallahAhmed,
         github: "https://github.com/Safan05", 
-        linkedin: "https://linkedin.com/in/danicaw",               //need to update
+        linkedin: "https://www.linkedin.com/in/abdallah-safan-021483278/",               
     },
     {
         name: "Habiba Mahmoud",
