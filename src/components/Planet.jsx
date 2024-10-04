@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
+import { Text } from '@react-three/drei';
 import * as THREE from 'three';
 import Ecliptic from './Ecliptic';
 import SaturnRings from './SaturnRings';
@@ -71,7 +72,7 @@ const Planet = ({ id, onClick,setPlanetPosition, selectedPlanet,spFactor, rotFac
   const SECONDS_IN_A_DAY = 86400;
   const EARTH_DAYS_IN_A_YEAR = 365.25; 
   const Ringsspeed= (2 * Math.PI * speedFactor) / (80 * SECONDS_IN_A_DAY);
-
+  const Name="Earth";
   switch(id){
       case 1: { // Mercury
         size = 0.4; // scaled radius
@@ -212,7 +213,6 @@ const Planet = ({ id, onClick,setPlanetPosition, selectedPlanet,spFactor, rotFac
       setShowMoons(false);
     }
   });
-
   return (
     <>
       <group key={`group-${id}`} rotation={[tiltangle, 0, 0]}>
@@ -225,7 +225,6 @@ const Planet = ({ id, onClick,setPlanetPosition, selectedPlanet,spFactor, rotFac
       {id ==6 && 
           <SaturnRings speed={Ringsspeed} offset={6} />
       }
-
       {showMoons && moonsData[id]?.map((moon, index) => (
         <Moon
           key={index}

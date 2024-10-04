@@ -2,7 +2,7 @@ import { useState, Suspense ,useRef, useEffect } from 'react';
 import { Canvas , useThree,useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
-import { Leva, useControls } from 'leva';
+import { Leva, useControls,button } from 'leva';
 import Sun from '../components/Sun';
 import Planet from '../components/Planet';
 import Lights from '../components/Lights';
@@ -41,7 +41,7 @@ const CameraManager = ({ setCameraPosition }) => {
 };
 
 const MainOrrery = () => {
-  
+  const [Labels,setLabels]=useState(false);
   const [selectedPlanet, setSelectedPlanet] = useState(null);
   const [planetPosition, setPlanetPosition] = useState(null); 
   const [isclicked, setIsClicked] = useState(false);
@@ -62,6 +62,9 @@ const MainOrrery = () => {
   }, []);
 
     const { speedFactor, dateString } = useControls({
+      "Show/Hide Labels": button(() => {
+        setLabels(prevLabels => !prevLabels);
+      }),
       speedFactor: { value: 1, min: -100000, max: 100000, step: 5 },
       dateString: {
         value: new Date().toISOString().split('T')[0], 
@@ -96,8 +99,6 @@ const MainOrrery = () => {
 
     );
   }
-
-
   return (
     <>
       <Leva />
@@ -119,6 +120,7 @@ const MainOrrery = () => {
            onClick={handlePlanetClick}
            setPlanetPosition={setPlanetPosition}
            selectedPlanet={selectedPlanet}
+           Labels={Labels}
           />
           <Lights />
           <OrbitControls 

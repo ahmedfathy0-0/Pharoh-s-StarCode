@@ -5,7 +5,7 @@ import HazardousBody from './HazardousBody';
 const NEO_API_KEY = 'AhodELbZDubIXydMX1tddShcSkQceF13wuatO1Zg'; 
 const NEO_API_URL = `https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=${NEO_API_KEY}`;
 
-const NEOScene = ({ onClick, setPlanetPosition, selectedPlanet }) => {
+const NEOScene = ({ onClick, setPlanetPosition, selectedPlanet,Labels }) => {
     const [hazardousBodies, setHazardousBodies] = useState([]);
 
     useEffect(() => {
@@ -14,7 +14,7 @@ const NEOScene = ({ onClick, setPlanetPosition, selectedPlanet }) => {
                 const response = await axios.get(NEO_API_URL);
                 const hazardousNEOs = response.data.near_earth_objects;
                 setHazardousBodies(hazardousNEOs);
-               // console.log(response.data.near_earth_objects);
+                console.log(response.data.near_earth_objects);
             } catch (error) {
                 console.error('Error fetching NEO data:', error);
             }
@@ -51,6 +51,7 @@ const NEOScene = ({ onClick, setPlanetPosition, selectedPlanet }) => {
             onClick={onClick}
             setPlanetPosition={setPlanetPosition}
             selectedPlanet={selectedPlanet}
+            Labels={Labels}
         />
     );
 })}
