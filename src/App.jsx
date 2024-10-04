@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import WelcomePage from './pages/WelcomePage';
 import TeamPage from './pages/TeamPage';
 import ExplorePage from './pages/ExplorePage';
+import BackgroundSound from './components/BackgroundSound';
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);  // State to manage sidebar visibility
@@ -31,6 +32,7 @@ const App = () => {
     return(
       <>
         <Outlet />
+        <BackgroundSound />
       </>
        
 
