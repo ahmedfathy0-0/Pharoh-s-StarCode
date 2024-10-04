@@ -1,7 +1,7 @@
 .moon-info {
     position: fixed; 
     top: 50%;
-    left: 20px; 
+    right: 20px; 
     transform: translateY(-50%); 
     padding: 15px; 
     background-color: rgba(83, 87, 96, 0.8); 

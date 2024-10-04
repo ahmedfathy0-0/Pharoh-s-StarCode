@@ -2,11 +2,11 @@
 .sidebar {
   width: 250px;
   height: 100vh;
-  background-color: #363b4a; 
+  background-color: rgba(83, 87, 96, 0.6); 
   padding: 20px;
   position: fixed;
   top: 0;
-  left: -250px; /* Hidden initially */
+  left: -250px; 
   transition:  0.4s; 
   box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3); 
   z-index: 1000;
@@ -22,7 +22,7 @@
 .sidebar h2 {
   margin-bottom: 20px;
   font-size: 24px;
-  color: #191d21; 
+  color: #eff3f6; 
   text-transform: uppercase;
   letter-spacing: 1.5px;
   border-bottom: 2px solid #007bff; 
@@ -44,6 +44,7 @@
   border-radius: 8px;
   transition:  0.3s;
   display: flex;
+  flex-direction: column;
   align-items: center; 
   position: relative;
 }
@@ -74,37 +75,51 @@
 
 
 .planets ul.show {
-  display: block; 
+  display: flex;
+  flex-direction: column;
+}
+.planets img {
+  width: 20px; 
+  height: auto; 
+  margin-right: 8px; 
+  vertical-align: middle; 
 }
 
 
 .moon-icon {
   cursor: pointer;
-  display: inline-block;
-  margin-left: auto; 
-  font-size: 18px;
+  display: inline-flex; 
+  align-items: center; 
+  width: 30px;
+  height: 30px;
+  margin-left: auto;
   color: #007bff;
+  border: #007bff solid 2px;
+  border-radius: 50%; 
+  padding: 5px; 
+  right: 10px;
+  position: absolute;
 }
 
-
 .moon-icon::before {
-  content: "🌕"; 
+  content: ""; 
   display: inline-block;
   font-size: 20px; 
-  margin-right: 10px;
+  margin-right: 10px; 
 }
 
 
 .sidebar-button {
   position: absolute;
   width: 50px;
-  top: 50%;
+  top: 10%;
   right: -50px;
   transform: translateY(-50%);
   background-color: #363b4a;
   color: #fff;
   padding: 15px 5px;
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 50px 50px 0;
+  font-size: 12px;
   text-align: center;
   cursor: pointer;
   transition:  0.3s;
