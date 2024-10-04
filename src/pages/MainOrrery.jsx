@@ -14,7 +14,7 @@ import CameraController from '../components/CameraController';
 import PlanetInfo from '../components/PlanetInfo';
 import MoonInfo from '../components/MoonInfo';
 import moonData from '../components/MoonData';
-import PlanetsAPI from '../components/RetriveData';
+// import PlanetsAPI from '../components/RetriveData';
 
 const generateAsteroidBelt = (count, marsOrbit, jupiterOrbit) => {
   const positions = [];

@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
 import earthMoon from '../textures/2k_moon.jpg';
@@ -44,9 +45,11 @@ const Moon = ({index, id, size, distance, currentPosition, spFactor, rotFactor, 
         moonRef.current.position.y = currentPosition.y +index *5;
   
         moonRef.current.rotation.y += rotationspeed;
+        const worldPosition = new THREE.Vector3();
+        moonRef.current.getWorldPosition(worldPosition);
         offset += 0.01; 
         if(isClicked){
-            setPlanetPosition( moonRef.current.position.clone());
+            setPlanetPosition( worldPosition);
         }       
     }
     });
