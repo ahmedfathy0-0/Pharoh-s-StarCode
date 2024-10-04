@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box; 
+  width: 100%;
+  
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; 
+  position: relative;
+  border-radius: 10px;
+}
+
+body {
+  background-image: url(./textures/8k_stars_milky_way.jpg);
+  background-size: cover;
+  background-attachment: fixed; 
+}/* Planet Info Container */
