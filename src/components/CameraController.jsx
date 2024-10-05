@@ -94,22 +94,22 @@ const CameraController = ({ planetPosition , isclicked, currentCameraPosition, s
       targetz = planetPosition.z;
       break;
     case 504:
-      targetx = planetPosition.x + 0.1;
+      targetx = planetPosition.x + 0.15;
       targety = planetPosition.y ;
       targetz = planetPosition.z;
       break;
     case 505:
-      targetx = planetPosition.x + 0.5;
+      targetx = planetPosition.x + 0.15;
       targety = planetPosition.y ;
       targetz = planetPosition.z;
       break;
     case 506:
-      targetx = planetPosition.x + 1;
+      targetx = planetPosition.x + 0.2;
       targety = planetPosition.y ;
       targetz = planetPosition.z;
       break;
     case 507:
-      targetx = planetPosition.x + 1;
+      targetx = planetPosition.x + 0.3;
       targety = planetPosition.y ;
       targetz = planetPosition.z;
       break;
@@ -124,12 +124,12 @@ const CameraController = ({ planetPosition , isclicked, currentCameraPosition, s
       targetz = planetPosition.z;
       break;
     case 510:
-      targetx = planetPosition.x + 1;
+      targetx = planetPosition.x + 0.3;
       targety = planetPosition.y ;
       targetz = planetPosition.z;
       break;
     case 511:
-      targetx = planetPosition.x + 1;
+      targetx = planetPosition.x + 0.3;
       targety = planetPosition.y ;
       targetz = planetPosition.z;
       break;
@@ -139,7 +139,7 @@ const CameraController = ({ planetPosition , isclicked, currentCameraPosition, s
       targetz = planetPosition.z;
       break;
     case 513:
-      targetx = planetPosition.x + 1;
+      targetx = planetPosition.x + 0.2;
       targety = planetPosition.y ;
       targetz = planetPosition.z;
       break;
@@ -149,7 +149,7 @@ const CameraController = ({ planetPosition , isclicked, currentCameraPosition, s
       targetz = planetPosition.z;
       break;
     case 515:
-      targetx = planetPosition.x + 1;
+      targetx = planetPosition.x + 0.15;
       targety = planetPosition.y ;
       targetz = planetPosition.z;
       break;
