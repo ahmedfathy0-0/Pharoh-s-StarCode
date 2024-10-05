@@ -74,32 +74,32 @@ const CameraController = ({ planetPosition , isclicked, currentCameraPosition, s
       break;
     //astroids
     case 500:
-      targetx = planetPosition.x + 1;
+      targetx = planetPosition.x + 2;
       targety = planetPosition.y ;
       targetz = planetPosition.z;
       break;
     case 501:
-      targetx = planetPosition.x + 1;
+      targetx = planetPosition.x + 0.2;
       targety = planetPosition.y ;
       targetz = planetPosition.z;
       break;
     case 502:
-      targetx = planetPosition.x + 1;
+      targetx = planetPosition.x + 0.5;
       targety = planetPosition.y ;
       targetz = planetPosition.z;
       break;
     case 503:
-      targetx = planetPosition.x + 1;
+      targetx = planetPosition.x + 3;
       targety = planetPosition.y ;
       targetz = planetPosition.z;
       break;
     case 504:
-      targetx = planetPosition.x + 1;
+      targetx = planetPosition.x + 0.1;
       targety = planetPosition.y ;
       targetz = planetPosition.z;
       break;
     case 505:
-      targetx = planetPosition.x + 1;
+      targetx = planetPosition.x + 0.5;
       targety = planetPosition.y ;
       targetz = planetPosition.z;
       break;

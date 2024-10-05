@@ -22,7 +22,7 @@ const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 const testimonials = [
     {
         name: "Ahmed Fathy",
-        title: "Software Engineer",
+        title: "Computer Engineer",
         text: "",
         image: AhmedFathy,
         github: "https://github.com/ahmedfathy0-0", 
@@ -30,7 +30,7 @@ const testimonials = [
     },
     {
         name: "Ammar Yasser",
-        title: "Software Engineer ",
+        title: "Computer Engineer ",
         text: "",
         image: AmmarYasser, 
         github: "https://github.com/AMYasserF", 
@@ -38,7 +38,7 @@ const testimonials = [
     },
     {
         name: "Abdallah Ahmed",
-        title: "Software Engineer",
+        title: "Computer Engineer",
         text: "",
         image: AbdallahAhmed,
         github: "https://github.com/Safan05", 
@@ -46,7 +46,7 @@ const testimonials = [
     },
     {
         name: "Habiba Mahmoud",
-        title: "Software Engineer",
+        title: "Computer Engineer",
         text: "",
         image: HabibaMahmoud, 
         github: "https://github.com/HabibaMahmoud2005", 

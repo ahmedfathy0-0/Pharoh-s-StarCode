@@ -13,8 +13,8 @@ const HazardousBody = ({index, size, distanceFromSun, speed, rotationspeed, init
     const texture = useTexture(HazardousBodyTexture);
     const [isClicked, setIsClicked] = React.useState(false);
     
-    const geometry = new THREE.DodecahedronGeometry(size); // Using DodecahedronGeometry
-    const material = new THREE.MeshStandardMaterial({ color: 0x8B4513 }); // Brown color to represent an asteroid
+    const geometry = new THREE.DodecahedronGeometry(size); 
+    const material = new THREE.MeshStandardMaterial({ color: 0x8B4513 }); 
 
     const handleClick = () => {
 
@@ -28,7 +28,7 @@ const HazardousBody = ({index, size, distanceFromSun, speed, rotationspeed, init
     useFrame(({ clock }) => {
         const delta = clock.getElapsedTime();
         
-        angleRef.current += speed * delta * 0.0001; 
+        angleRef.current += speed * delta * 0.0005; 
         
         const x = distanceFromSun * Math.cos(angleRef.current);
         const z = distanceFromSun * Math.sin(angleRef.current);
@@ -40,13 +40,14 @@ const HazardousBody = ({index, size, distanceFromSun, speed, rotationspeed, init
             const worldPosition = new THREE.Vector3();
             meshRef.current.getWorldPosition(worldPosition);  
             if (index+500 === selectedPlanet) {
+                angleRef.current *= 0.001;
                 setPlanetPosition(worldPosition);
             }
         }
     });
 
     return (
-        <mesh ref={meshRef} geometry={geometry} material={material} onClick={handleClick}>
+        <mesh ref={meshRef} geometry={geometry} onClick={handleClick}>
             <meshStandardMaterial map={texture} />
         </mesh>
     );
