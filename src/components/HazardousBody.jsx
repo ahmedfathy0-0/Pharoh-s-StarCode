@@ -47,9 +47,11 @@ const HazardousBody = ({index, size, distanceFromSun, speed, rotationspeed, init
     });
 
     return (
+        <group rotation={[10,0, 0]}>
         <mesh ref={meshRef} geometry={geometry} onClick={handleClick}>
             <meshStandardMaterial map={texture} />
         </mesh>
+        </group>
     );
 };
 
