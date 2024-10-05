@@ -96,7 +96,7 @@ Here are some of the key resources and APIs we used in building the project:
 
 > [!IMPORTANT] 
 > **To contribute,** Fork this repository, create a new branch from the main branch, make your changes, and submit a pull request. <br/>
-> Include a description of your changes in the pull request description and adhere to our [code style guide](https://github.com/HelanaNady/DataStructures/blob/main/styleGuideline.md).
+> Include a description of your changes in the pull request description.
 
 ## Contributors  
 
