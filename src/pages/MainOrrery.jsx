@@ -14,6 +14,8 @@ import CameraController from '../components/CameraController';
 import PlanetInfo from '../components/PlanetInfo';
 import MoonInfo from '../components/MoonInfo';
 import moonData from '../components/MoonData';
+import asteroidData from '../components/asteroidData';
+import AstroidInfo from '../components/AstroidInfo';
 import Sidebar from '../components/Sidebar';
 import './Ebook.css'; 
 // import PlanetsAPI from '../components/RetriveData';
@@ -88,7 +90,7 @@ const MainOrrery = () => {
   const asteroidPositions = generateAsteroidBelt(0, { xRadius: 66, zRadius: 54 }, { xRadius: 76, zRadius: 64 });
   const planetInfo = planetData.find((p) => p.id === selectedPlanet);
   const moonInfo = moonData.find((m) => m.id === selectedPlanet); 
- 
+  const astroidInfo = asteroidData.find((a) => a.id === selectedPlanet);
   if (loading) {
     return (
       <div className="loading-container-wrapper">
@@ -147,6 +149,9 @@ const MainOrrery = () => {
       )}
       {moonInfo && (
         <MoonInfo moonInfo={moonInfo} handleClose={handleClose} />
+      )}
+      {astroidInfo && (
+        <AstroidInfo astroidInfo={astroidInfo} handleClose={handleClose} />
       )}
     </>
   );
