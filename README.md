@@ -117,8 +117,8 @@ Here are some of the key resources and APIs we used in building the project:
 	</a>
   </td>
   <td align = "center"> 
-	<a href = "https://github.com/Rahma-Fathy-coder">
-	  <img src = "https://github.com/Rahma-Fathy-coder.png" width = 100>
+	<a href = "https://github.comRah00m">
+	  <img src = "https://github.com/Rah00m.png" width = 100>
 	  <br />
 	  <sub> Rahma Fathy </sub>
 	</a>
